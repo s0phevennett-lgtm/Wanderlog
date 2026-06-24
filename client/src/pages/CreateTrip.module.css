@@ -6,7 +6,7 @@
   justify-content: center;
   padding: 32px 24px;
   font-family: 'DM Sans', system-ui, sans-serif;
-  background: #1a3828;
+  background: #0f2238;
   position: relative;
   overflow: hidden;
 }
@@ -25,30 +25,30 @@
 }
 .blob1 {
   width: 70vw; height: 70vw;
-  background: #2E7D50;
+  background: #1A3C5E;
   top: -20%; left: -15%;
-  opacity: 0.75;
+  opacity: 0.85;
   animation: drift1 20s ease-in-out infinite;
 }
 .blob2 {
   width: 55vw; height: 55vw;
-  background: #1A3C5E;
+  background: #2E7D50;
   top: 20%; right: -20%;
   opacity: 0.65;
   animation: drift2 26s ease-in-out infinite;
 }
 .blob3 {
-  width: 50vw; height: 50vw;
-  background: #F5ECD7;
-  bottom: -15%; left: 25%;
-  opacity: 0.28;
+  width: 55vw; height: 55vw;
+  background: #1a5f7a;
+  bottom: -15%; left: 20%;
+  opacity: 0.70;
   animation: drift3 22s ease-in-out infinite;
 }
 .blob4 {
-  width: 40vw; height: 40vw;
-  background: #C1694F;
-  top: 5%; right: 25%;
-  opacity: 0.22;
+  width: 45vw; height: 45vw;
+  background: #2d4a8a;
+  top: 5%; right: 20%;
+  opacity: 0.55;
   animation: drift4 30s ease-in-out infinite;
 }
 

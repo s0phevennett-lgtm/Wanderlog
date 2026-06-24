@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { createTrip, importPdf } from '../api'
 import styles from './CreateTrip.module.css'
@@ -13,6 +13,52 @@ export default function CreateTrip() {
   const [result, setResult] = useState(null)
   const fileRef = useRef()
   const navigate = useNavigate()
+  const blobRefs = [useRef(), useRef(), useRef(), useRef()]
+
+  useEffect(() => {
+    const targets = [
+      { x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }
+    ]
+    const current = [
+      { x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }
+    ]
+    // Different parallax strengths per blob
+    const strength = [55, -40, 35, -60]
+    let rafId
+
+    const onMove = (e) => {
+      const cx = (e.clientX / window.innerWidth  - 0.5)
+      const cy = (e.clientY / window.innerHeight - 0.5)
+      strength.forEach((s, i) => {
+        targets[i].x = cx * s
+        targets[i].y = cy * s
+      })
+    }
+
+    const tick = () => {
+      let dirty = false
+      current.forEach((c, i) => {
+        const dx = targets[i].x - c.x
+        const dy = targets[i].y - c.y
+        if (Math.abs(dx) > 0.05 || Math.abs(dy) > 0.05) {
+          c.x += dx * 0.04
+          c.y += dy * 0.04
+          dirty = true
+        }
+        if (blobRefs[i].current) {
+          blobRefs[i].current.style.transform = `translate(${c.x}px, ${c.y}px)`
+        }
+      })
+      rafId = requestAnimationFrame(tick)
+    }
+
+    window.addEventListener('mousemove', onMove)
+    rafId = requestAnimationFrame(tick)
+    return () => {
+      window.removeEventListener('mousemove', onMove)
+      cancelAnimationFrame(rafId)
+    }
+  }, [])
 
   async function handlePdfChange(e) {
     const file = e.target.files[0]
@@ -54,10 +100,10 @@ export default function CreateTrip() {
     return (
       <div className={styles.page}>
         <div className={styles.blobs} aria-hidden="true">
-          <div className={`${styles.blob} ${styles.blob1}`}/>
-          <div className={`${styles.blob} ${styles.blob2}`}/>
-          <div className={`${styles.blob} ${styles.blob3}`}/>
-          <div className={`${styles.blob} ${styles.blob4}`}/>
+          <div ref={blobRefs[0]} className={`${styles.blob} ${styles.blob1}`}/>
+          <div ref={blobRefs[1]} className={`${styles.blob} ${styles.blob2}`}/>
+          <div ref={blobRefs[2]} className={`${styles.blob} ${styles.blob3}`}/>
+          <div ref={blobRefs[3]} className={`${styles.blob} ${styles.blob4}`}/>
         </div>
         <div className={styles.card}>
           <div className={styles.successIcon}>✈️</div>
