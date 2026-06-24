@@ -369,12 +369,12 @@ app.post('/api/trips/:id/seed-demo', async (req, res) => {
       {
         idx: 0, // Barcelona
         photos: [
-          { url: `${BASE_URL}/demo/barcelona/1.jpg`, caption: 'First morning in Barcelona — Sagrada Família took my breath away 🙏' },
-          { url: `${BASE_URL}/demo/barcelona/3.jpg`, caption: 'Gothic Quarter streets, could walk here forever' },
-          { url: `${BASE_URL}/demo/barcelona/5.jpg`, caption: 'Patatas bravas and cava at the mercado 🥂' },
+          { url: `${BASE_URL}/demo/barcelona/1.jpg`, caption: 'Casa Batlló at golden hour — Gaudí was not human 🤯' },
+          { url: `${BASE_URL}/demo/barcelona/3.jpg`, caption: 'Found this incredible mosaic mural wandering through the Gothic Quarter' },
+          { url: `${BASE_URL}/demo/barcelona/5.jpg`, caption: 'The Barcelona Cathedral peaking through the streets ✨' },
         ],
         reactions: [['❤️','Mum'],['😍','Jake'],['🔥','Olivia'],['😭','Dad']],
-        photoComment: 'This is STUNNING!! So jealous right now 😭',
+        photoComment: 'Casa Batlló is UNREAL!! Gaudí was actually a genius',
         stopComments: [
           { author_name: 'Mum',    body: 'Oh my goodness it looks incredible!! So jealous living vicariously through you 😭' },
           { author_name: 'Jake',   body: 'Did you make it to Park Güell?? The views from up there are unreal' },
@@ -386,12 +386,12 @@ app.post('/api/trips/:id/seed-demo', async (req, res) => {
       {
         idx: 1, // Ibiza
         photos: [
-          { url: `${BASE_URL}/demo/ibiza/1.jpg`, caption: 'Found a hidden cove — keeping the location a secret 🤫' },
-          { url: `${BASE_URL}/demo/ibiza/4.jpg`, caption: 'Sunset from Café del Mar, nothing else like it 🌅' },
-          { url: `${BASE_URL}/demo/ibiza/7.jpg`, caption: 'Es Vedrà in the golden hour light ✨' },
+          { url: `${BASE_URL}/demo/ibiza/1.jpg`, caption: 'Boat day around the island — the cliffs are insane 🚤' },
+          { url: `${BASE_URL}/demo/ibiza/4.jpg`, caption: 'Those sea rocks in the background... the water is actually this colour 💙' },
+          { url: `${BASE_URL}/demo/ibiza/7.jpg`, caption: 'Ushuaïa open air club — best night of my life, no competition 🔥' },
         ],
         reactions: [['🔥','Jake'],['😍','Olivia'],['❤️','Mum'],['🤩','Tom']],
-        photoComment: 'The water is actually that colour in real life!!',
+        photoComment: 'The water is actually that colour in real life — not edited at all!!',
         stopComments: [
           { author_name: 'Tom',    body: 'Okay I am officially booking flights right now, this looks incredible' },
           { author_name: 'Sophie', body: 'DO IT. Best decision I\'ve ever made 🙌' },
@@ -402,31 +402,31 @@ app.post('/api/trips/:id/seed-demo', async (req, res) => {
       {
         idx: 2, // Mallorca
         photos: [
-          { url: `${BASE_URL}/demo/mallorca/1.jpg`, caption: 'Renting a little boat and exploring the coastline 🚤' },
-          { url: `${BASE_URL}/demo/mallorca/3.jpg`, caption: 'Serra de Tramuntana — worth every switchback' },
-          { url: `${BASE_URL}/demo/mallorca/5.jpg`, caption: 'Morning ensaïmada at a village café ☕' },
+          { url: `${BASE_URL}/demo/mallorca/1.jpg`, caption: 'Found a secret cala — sitting on the rocks watching the swimmers 🩵' },
+          { url: `${BASE_URL}/demo/mallorca/3.jpg`, caption: 'Boat day to the sea caves, the water colour is not real 😭' },
+          { url: `${BASE_URL}/demo/mallorca/5.jpg`, caption: 'Hiking down to the cala through the pine trees 🌿' },
         ],
         reactions: [['❤️','Mum'],['😍','Jake'],['✨','Olivia'],['😮','Dad']],
-        photoComment: 'The mountains AND the beach?? Mallorca has it all honestly',
+        photoComment: 'That turquoise water!! Mallorca you have won me over completely',
         stopComments: [
-          { author_name: 'Dad',    body: 'Stay safe on those mountain roads sweetheart! Looks absolutely gorgeous' },
-          { author_name: 'Sophie', body: 'Dad it\'s so beautiful here, the views from the top are incredible' },
+          { author_name: 'Dad',    body: 'Stay safe on those cliff paths sweetheart! Looks absolutely gorgeous' },
+          { author_name: 'Sophie', body: 'Dad it\'s so beautiful here, most stunning water I\'ve ever seen' },
           { author_name: 'Jake',   body: 'Did you hire a car? The north of the island is so worth exploring' },
-          { author_name: 'Sophie', body: 'Yes!! Drove all the way to Cap de Formentor, mind-blowing' },
+          { author_name: 'Sophie', body: 'Yes!! Drove all the way to Cap de Formentor, absolutely mind-blowing' },
         ],
       },
       {
         idx: 3, // Seville
         photos: [
-          { url: `${BASE_URL}/demo/seville/1.jpg`, caption: 'The Alcázar is genuinely the most beautiful place I\'ve ever been 😭' },
-          { url: `${BASE_URL}/demo/seville/3.jpg`, caption: 'Flamenco show in Triana — spine-tingling' },
-          { url: `${BASE_URL}/demo/seville/5.jpg`, caption: 'Tapas crawl through Santa Cruz neighbourhood 🍷' },
+          { url: `${BASE_URL}/demo/seville/1.jpg`, caption: 'Plaza de España — genuinely the most beautiful place I\'ve ever stood 😭' },
+          { url: `${BASE_URL}/demo/seville/3.jpg`, caption: 'Orange trees in the courtyard of Seville Cathedral 🍊' },
+          { url: `${BASE_URL}/demo/seville/5.jpg`, caption: 'Night out in the old town — these streets go forever 🌙' },
         ],
         reactions: [['❤️','Mum'],['😍','Olivia'],['🔥','Tom'],['❤️','Jake']],
-        photoComment: 'The Alcázar looks like something from a fairytale!!',
+        photoComment: 'Plaza de España looks like something from a movie set!!',
         stopComments: [
           { author_name: 'Olivia', body: 'SEVILLE!! My favourite city in the whole world, you\'re going to love it' },
-          { author_name: 'Sophie', body: 'Olivia you were SO right. I am obsessed with this place' },
+          { author_name: 'Sophie', body: 'Olivia you were SO right. I am absolutely obsessed with this place' },
           { author_name: 'Tom',    body: 'Make sure you go up the Giralda at sunset, the views are something else' },
           { author_name: 'Sophie', body: 'Did it last night — 100% the best sunset of the whole trip so far!' },
         ],
@@ -434,29 +434,29 @@ app.post('/api/trips/:id/seed-demo', async (req, res) => {
       {
         idx: 4, // Lagos
         photos: [
-          { url: `${BASE_URL}/demo/lagos/1.jpg`, caption: 'Ponta da Piedade — these sea stacks don\'t look real 🤯' },
-          { url: `${BASE_URL}/demo/lagos/3.jpg`, caption: 'Kayaking through the sea caves 🚣' },
-          { url: `${BASE_URL}/demo/lagos/6.jpg`, caption: 'Meia Praia at golden hour — the most perfect beach' },
+          { url: `${BASE_URL}/demo/lagos/1.jpg`, caption: 'Ponta da Piedade — walking down to this view I actually gasped 🤯' },
+          { url: `${BASE_URL}/demo/lagos/3.jpg`, caption: 'Beach day at Praia do Camilo, waves crashing through the arch 🌊' },
+          { url: `${BASE_URL}/demo/lagos/6.jpg`, caption: 'Inside Benagil Cave — kayaked here at sunrise, worth every stroke 🚣' },
         ],
         reactions: [['😍','Mum'],['❤️','Jake'],['🤩','Olivia'],['🔥','Tom'],['😭','Dad']],
         photoComment: 'Portugal is stealing my heart honestly 😭',
         stopComments: [
           { author_name: 'Mum',    body: 'Sophie those cliffs!! I actually gasped looking at this photo' },
-          { author_name: 'Sophie', body: 'Mum they are even MORE dramatic in person. I cried a little bit 😂' },
+          { author_name: 'Sophie', body: 'Mum they are even MORE dramatic in person. I nearly cried 😂' },
           { author_name: 'Jake',   body: 'Which has been your favourite stop so far??' },
-          { author_name: 'Sophie', body: 'Honestly impossible to choose but Lagos might be it... the nature is just unreal' },
+          { author_name: 'Sophie', body: 'Honestly impossible to choose but Lagos might be it... the nature here is unreal' },
           { author_name: 'Olivia', body: 'I knew Portugal would steal your heart 🥹' },
         ],
       },
       {
         idx: 5, // Lisbon
         photos: [
-          { url: `${BASE_URL}/demo/lisbon/1.jpg`, caption: 'Tram 28 through Alfama — the most charming city 🚃' },
-          { url: `${BASE_URL}/demo/lisbon/3.jpg`, caption: 'View from Miradouro da Graça at sunset 🌇' },
-          { url: `${BASE_URL}/demo/lisbon/5.jpg`, caption: 'Pastéis de nata from Pastéis de Belém — life changing ☁️' },
+          { url: `${BASE_URL}/demo/lisbon/1.jpg`, caption: 'Caught the famous yellow tram in Alfama 🚃 iconic' },
+          { url: `${BASE_URL}/demo/lisbon/3.jpg`, caption: 'Sunset over the rooftops and the Tagus river from the miradouro 🌇' },
+          { url: `${BASE_URL}/demo/lisbon/5.jpg`, caption: 'Found the cutest little arched doorway in Alfama — Lisbon is a dream 🏡' },
         ],
         reactions: [['❤️','Mum'],['😍','Dad'],['🥹','Olivia'],['🔥','Jake']],
-        photoComment: 'Lisbon is the most underrated city in Europe change my mind',
+        photoComment: 'Lisbon is the most charming city in Europe, change my mind',
         stopComments: [
           { author_name: 'Dad',    body: 'Your grandmother would have loved Lisbon, she always wanted to go' },
           { author_name: 'Sophie', body: 'Dad that made me tear up a little 🥹 I\'m thinking of her' },
@@ -467,9 +467,9 @@ app.post('/api/trips/:id/seed-demo', async (req, res) => {
       {
         idx: 6, // Porto
         photos: [
-          { url: `${BASE_URL}/demo/porto/1.jpg`, caption: 'Ribeira district at golden hour — I never want to leave 🌅' },
-          { url: `${BASE_URL}/demo/porto/3.jpg`, caption: 'Port wine tasting in a 300-year-old cellar 🍷' },
-          { url: `${BASE_URL}/demo/porto/5.jpg`, caption: 'São Bento station — the most beautiful train station in the world?' },
+          { url: `${BASE_URL}/demo/porto/1.jpg`, caption: 'Dom Luís Bridge at golden hour — Ribeira glowing below 🌅' },
+          { url: `${BASE_URL}/demo/porto/3.jpg`, caption: 'The azulejo tiles at Porto Cathedral — stood here for way too long 💙' },
+          { url: `${BASE_URL}/demo/porto/5.jpg`, caption: 'Porto vintage prints by the Douro — bought four, no regrets 🖼️' },
         ],
         reactions: [['❤️','Mum'],['😍','Jake'],['🍷','Tom'],['✨','Olivia']],
         photoComment: 'Porto is giving me serious "I need to move here" feelings',
