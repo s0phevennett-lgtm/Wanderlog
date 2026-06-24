@@ -21,25 +21,28 @@
 }
 
 /* ── Branding ── */
-.logo {
-  font-size: 44px;
-  margin-bottom: 10px;
-  line-height: 1;
+.logoWrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 6px;
 }
 
-.title {
+.logoText {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 38px;
   font-weight: 700;
   color: var(--deep-blue);
-  margin: 0 0 6px;
   line-height: 1.1;
+  letter-spacing: -0.5px;
 }
 
 .subtitle {
-  color: #7a6f63;
-  font-size: 15px;
-  margin: 0 0 30px;
+  color: #8a7f74;
+  font-size: 14px;
+  margin: 0 0 28px;
+  padding-left: 2px;
+  letter-spacing: 0.02em;
 }
 
 /* ── Mode tabs ── */

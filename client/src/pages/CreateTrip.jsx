@@ -90,8 +90,14 @@ export default function CreateTrip() {
   return (
     <div className={styles.page}>
       <div className={styles.card}>
-        <div className={styles.logo}>🗺️</div>
-        <h1 className={styles.title}>Wanderlog</h1>
+        <div className={styles.logoWrap}>
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="24" fill="#2E7D50" fillOpacity="0.12"/>
+            <path d="M24 10C17.373 10 12 15.373 12 22C12 30.5 24 40 24 40C24 40 36 30.5 36 22C36 15.373 30.627 10 24 10Z" fill="#2E7D50" fillOpacity="0.85"/>
+            <circle cx="24" cy="22" r="5" fill="white"/>
+          </svg>
+          <span className={styles.logoText}>Wanderlog</span>
+        </div>
         <p className={styles.subtitle}>Share your journey in real time</p>
 
         <div className={styles.tabs}>
