@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { addComment, getPhotoUrl } from '../api'
 import styles from './Lightbox.module.css'
 
@@ -8,6 +8,12 @@ export default function Lightbox({ photo, onClose, onReact, onCommented }) {
   const [commentName, setCommentName] = useState('')
   const [commentBody, setCommentBody] = useState('')
   const [submitting, setSubmitting] = useState(false)
+
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') onClose() }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [onClose])
 
   const reactionCounts = EMOJIS.reduce((acc, e) => {
     acc[e] = photo.reactions.filter(r => r.emoji === e).length
@@ -30,8 +36,8 @@ export default function Lightbox({ photo, onClose, onReact, onCommented }) {
 
   return (
     <div className={styles.overlay} onClick={onClose}>
+      <button className={styles.close} onClick={onClose} aria-label="Close">✕</button>
       <div className={styles.modal} onClick={e => e.stopPropagation()}>
-        <button className={styles.close} onClick={onClose}>✕</button>
         <img src={getPhotoUrl(photo.storage_path)} alt={photo.caption || ''} className={styles.image} />
 
         <div className={styles.sidebar}>
