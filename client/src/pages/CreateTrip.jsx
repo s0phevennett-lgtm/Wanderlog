@@ -53,6 +53,12 @@ export default function CreateTrip() {
     const adminUrl = `${window.location.origin}/admin/${result.trip.id}?token=${result.admin_token}`
     return (
       <div className={styles.page}>
+        <div className={styles.blobs} aria-hidden="true">
+          <div className={`${styles.blob} ${styles.blob1}`}/>
+          <div className={`${styles.blob} ${styles.blob2}`}/>
+          <div className={`${styles.blob} ${styles.blob3}`}/>
+          <div className={`${styles.blob} ${styles.blob4}`}/>
+        </div>
         <div className={styles.card}>
           <div className={styles.successIcon}>✈️</div>
           <h1 className={styles.title}>Trip Created!</h1>
@@ -89,6 +95,12 @@ export default function CreateTrip() {
 
   return (
     <div className={styles.page}>
+      <div className={styles.blobs} aria-hidden="true">
+        <div className={`${styles.blob} ${styles.blob1}`}/>
+        <div className={`${styles.blob} ${styles.blob2}`}/>
+        <div className={`${styles.blob} ${styles.blob3}`}/>
+        <div className={`${styles.blob} ${styles.blob4}`}/>
+      </div>
       <div className={styles.card}>
         <div className={styles.logoWrap}>
           <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
