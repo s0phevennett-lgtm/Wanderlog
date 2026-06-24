@@ -166,6 +166,17 @@ export async function getHighlights(tripId) {
 }
 
 export function getPhotoUrl(storagePath) {
+  if (storagePath.startsWith('http')) return storagePath
   const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
   return `${supabaseUrl}/storage/v1/object/public/photos/${storagePath}`
+}
+
+export async function seedDemo(tripId, token) {
+  const res = await fetch(`${BASE}/api/trips/${tripId}/seed-demo`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ token }),
+  })
+  if (!res.ok) throw new Error(await res.text())
+  return res.json()
 }

@@ -352,6 +352,118 @@ app.patch('/api/requests/:id', async (req, res) => {
   } catch (err) { res.status(500).json({ error: err.message }) }
 })
 
+// --- Demo Seed ---
+
+app.post('/api/trips/:id/seed-demo', async (req, res) => {
+  try {
+    const { token } = req.body
+    const { data: trip } = await supabase.from('trips').select().eq('id', req.params.id).single()
+    if (!trip) return res.status(404).json({ error: 'Not found' })
+    if (trip.admin_token !== token) return res.status(403).json({ error: 'Forbidden' })
+
+    const { data: stops } = await supabase.from('stops').select().eq('trip_id', req.params.id).order('position')
+    if (!stops?.length) return res.status(400).json({ error: 'No stops' })
+
+    const seed = [
+      {
+        idx: 0, // Paris
+        photos: [
+          { url: 'https://picsum.photos/id/338/900/600',  caption: 'Golden hour at the Eiffel Tower — worth every step ✨' },
+          { url: 'https://picsum.photos/id/1060/900/600', caption: 'Morning croissants near Montmartre ☕' },
+        ],
+        reactions: [['❤️','Mum'],['😍','Jake'],['🔥','Olivia'],['😭','Dad']],
+        photoComment: 'This is STUNNING!! So jealous right now 😭',
+        stopComments: [
+          { author_name: 'Mum',    body: 'Oh my goodness it looks absolutely incredible!! Living vicariously through you 😭' },
+          { author_name: 'Jake',   body: 'Have you been to Sainte-Chapelle yet? It\'s a must — the stained glass is unreal' },
+          { author_name: 'Sophie', body: 'Adding it to the list right now! So many things to see' },
+          { author_name: 'Olivia', body: 'What\'s the food like?? Tell me everything' },
+        ],
+      },
+      {
+        idx: 1, // Barcelona
+        photos: [
+          { url: 'https://picsum.photos/id/1019/900/600', caption: 'Sagrada Família — even more mind-blowing in person 🙏' },
+        ],
+        reactions: [['❤️','Mum'],['😍','Tom'],['✨','Olivia']],
+        photoComment: 'Gaudí was a genius honestly',
+        stopComments: [
+          { author_name: 'Dad',    body: 'Stay safe sweetheart! Are you eating properly?' },
+          { author_name: 'Sophie', body: 'Dad the tapas are literally INCREDIBLE. Having the best time 😂' },
+          { author_name: 'Tom',    body: 'Did you make it to the Gothic Quarter? Favourite neighbourhood in all of Europe' },
+        ],
+      },
+      {
+        idx: 2, // Rome
+        photos: [
+          { url: 'https://picsum.photos/id/493/900/600',  caption: 'The Colosseum — hard to believe it\'s actually real' },
+          { url: 'https://picsum.photos/id/1040/900/600', caption: 'Sunset over the Roman Forum 🌅' },
+        ],
+        reactions: [['❤️','Mum'],['😍','Jake'],['🔥','Tom'],['❤️','Olivia'],['😮','Dad']],
+        photoComment: 'Two thousand years of history just staring back at you 🤯',
+        stopComments: [
+          { author_name: 'Olivia', body: 'I am SO envious!! Please eat some gelato for me' },
+          { author_name: 'Sophie', body: 'I\'ve had gelato literally every single day 😂 no regrets' },
+          { author_name: 'Jake',   body: 'Which has been your favourite city so far??' },
+          { author_name: 'Sophie', body: 'Impossible question honestly... Rome might be edging it' },
+        ],
+      },
+    ]
+
+    for (const d of seed) {
+      const stop = stops[d.idx]
+      if (!stop) continue
+      for (const c of d.stopComments) {
+        await supabase.from('stop_comments').insert({ stop_id: stop.id, author_name: c.author_name, body: c.body })
+      }
+      for (const p of d.photos) {
+        const { data: photo } = await supabase.from('photos').insert({ stop_id: stop.id, storage_path: p.url, caption: p.caption }).select().single()
+        if (photo) {
+          const reactionRows = d.reactions.map(([emoji, reactor_name]) => ({ photo_id: photo.id, emoji, reactor_name }))
+          await supabase.from('reactions').insert(reactionRows)
+          await supabase.from('comments').insert({ photo_id: photo.id, author_name: 'Mum', body: d.photoComment })
+        }
+      }
+    }
+
+    // Check in at Rome (stop index 2)
+    const liveStop = stops[2] || stops[0]
+    const existing = await supabase.from('live_locations').select().eq('trip_id', req.params.id).maybeSingle()
+    const payload = {
+      trip_id: req.params.id, stop_id: liveStop.id,
+      lat: liveStop.lat, lng: liveStop.lng,
+      message: 'Exploring the ancient ruins of Rome — this city is absolutely unreal!',
+      status: 'Sightseeing',
+      journal_entry: 'Standing in the shadow of the Colosseum, it\'s impossible not to feel the weight of two thousand years pressing down on you. Every weathered stone holds a story.',
+      updated_at: new Date().toISOString(),
+    }
+    if (existing.data) {
+      await supabase.from('live_locations').update(payload).eq('id', existing.data.id)
+    } else {
+      await supabase.from('live_locations').insert(payload)
+    }
+
+    // Poll
+    const { data: poll } = await supabase.from('polls').insert({ trip_id: req.params.id, question: 'Which city should I spend an extra day in?', stop_id: null }).select().single()
+    if (poll) {
+      const opts = ['Paris','Barcelona','Rome','Santorini'].map((label, i) => ({ poll_id: poll.id, label, position: i }))
+      const { data: pollOptions } = await supabase.from('poll_options').insert(opts).select()
+      // Add a couple of votes
+      if (pollOptions?.length >= 3) {
+        await supabase.from('poll_votes').insert([
+          { poll_option_id: pollOptions[0].id, voter_name: 'Mum',    voter_token: uuidv4() },
+          { poll_option_id: pollOptions[2].id, voter_name: 'Jake',   voter_token: uuidv4() },
+          { poll_option_id: pollOptions[2].id, voter_name: 'Olivia', voter_token: uuidv4() },
+          { poll_option_id: pollOptions[3].id, voter_name: 'Tom',    voter_token: uuidv4() },
+          { poll_option_id: pollOptions[3].id, voter_name: 'Dad',    voter_token: uuidv4() },
+        ])
+      }
+    }
+
+    res.json({ ok: true })
+  } catch (err) { res.status(500).json({ error: err.message }) }
+})
+
 // --- Highlights ---
 
 app.get('/api/trips/:id/highlights', async (req, res) => {

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { createTrip, importPdf } from '../api'
+import { createTrip, importPdf, seedDemo } from '../api'
 import styles from './CreateTrip.module.css'
 
 export default function CreateTrip() {
@@ -31,9 +31,11 @@ export default function CreateTrip() {
   async function handleLoadExample() {
     setError('')
     setLoading(true)
-    setLoadingMsg('Loading example trip…')
     try {
+      setLoadingMsg('Creating example trip…')
       const data = await createTrip(EXAMPLE_TRIP)
+      setLoadingMsg('Adding photos & comments…')
+      await seedDemo(data.trip.id, data.admin_token)
       setResult(data)
     } catch (err) {
       setError('Could not load example trip.')
