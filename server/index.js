@@ -370,8 +370,14 @@ app.post('/api/trips/:id/seed-demo', async (req, res) => {
         idx: 0, // Barcelona
         photos: [
           { url: `${BASE_URL}/demo/barcelona/1.jpg`, caption: 'Casa Batlló at golden hour — Gaudí was not human 🤯' },
+          { url: `${BASE_URL}/demo/barcelona/2.jpg`, caption: 'Park Güell at sunrise — Sagrada Família in the distance, came here before the crowds 🌅' },
           { url: `${BASE_URL}/demo/barcelona/3.jpg`, caption: 'Found this incredible mosaic mural wandering through the Gothic Quarter' },
+          { url: `${BASE_URL}/demo/barcelona/4.jpg`, caption: 'Sunday morning wandering the Gothic Quarter 📷' },
           { url: `${BASE_URL}/demo/barcelona/5.jpg`, caption: 'The Barcelona Cathedral peaking through the streets ✨' },
+          { url: `${BASE_URL}/demo/barcelona/6.jpg`, caption: 'Best night out ❤️' },
+          { url: `${BASE_URL}/demo/barcelona/7.jpg`, caption: 'Inside Sagrada Família — the light through those windows 😭' },
+          { url: `${BASE_URL}/demo/barcelona/8.jpg`, caption: 'Bunkers del Carmel at night — the whole city sparkling below 🌃' },
+          { url: `${BASE_URL}/demo/barcelona/9.jpg`, caption: 'The detail on Sagrada Família\'s facade, still under construction after 140 years' },
         ],
         reactions: [['❤️','Mum'],['😍','Jake'],['🔥','Olivia'],['😭','Dad']],
         photoComment: 'Casa Batlló is UNREAL!! Gaudí was actually a genius',
@@ -387,8 +393,16 @@ app.post('/api/trips/:id/seed-demo', async (req, res) => {
         idx: 1, // Ibiza
         photos: [
           { url: `${BASE_URL}/demo/ibiza/1.jpg`, caption: 'Boat day around the island — the cliffs are insane 🚤' },
+          { url: `${BASE_URL}/demo/ibiza/2.jpg`, caption: 'Night one at a beach club — absolutely incredible energy 🎶' },
+          { url: `${BASE_URL}/demo/ibiza/3.jpg`, caption: 'Lunch at Yondal — the vibe here is unmatched 🌿' },
           { url: `${BASE_URL}/demo/ibiza/4.jpg`, caption: 'Those sea rocks in the background... the water is actually this colour 💙' },
+          { url: `${BASE_URL}/demo/ibiza/5.jpg`, caption: 'Rosé all day at a beach club 🥂' },
+          { url: `${BASE_URL}/demo/ibiza/6.jpg`, caption: 'Dancing on the beach as the sun went down 🌙' },
           { url: `${BASE_URL}/demo/ibiza/7.jpg`, caption: 'Ushuaïa open air club — best night of my life, no competition 🔥' },
+          { url: `${BASE_URL}/demo/ibiza/8.jpg`, caption: 'Amnesia closing party — bubbles everywhere 🫧' },
+          { url: `${BASE_URL}/demo/ibiza/9.jpg`, caption: 'Shoulders up for the drop 🎵' },
+          { url: `${BASE_URL}/demo/ibiza/10.jpg`, caption: 'DC10 at 6am — we do not stop 🙌' },
+          { url: `${BASE_URL}/demo/ibiza/11.jpg`, caption: 'Last night on the island and it absolutely did not disappoint 🌙' },
         ],
         reactions: [['🔥','Jake'],['😍','Olivia'],['❤️','Mum'],['🤩','Tom']],
         photoComment: 'The water is actually that colour in real life — not edited at all!!',
@@ -403,8 +417,13 @@ app.post('/api/trips/:id/seed-demo', async (req, res) => {
         idx: 2, // Mallorca
         photos: [
           { url: `${BASE_URL}/demo/mallorca/1.jpg`, caption: 'Found a secret cala — sitting on the rocks watching the swimmers 🩵' },
+          { url: `${BASE_URL}/demo/mallorca/2.jpg`, caption: 'The vintage tram through Sóller — probably the most charming village in Mallorca 🚃' },
           { url: `${BASE_URL}/demo/mallorca/3.jpg`, caption: 'Boat day to the sea caves, the water colour is not real 😭' },
+          { url: `${BASE_URL}/demo/mallorca/4.jpg`, caption: 'Found the most perfect little restaurant right on the water 🤍' },
           { url: `${BASE_URL}/demo/mallorca/5.jpg`, caption: 'Hiking down to the cala through the pine trees 🌿' },
+          { url: `${BASE_URL}/demo/mallorca/6.jpg`, caption: 'The old fishermen\'s boathouses at the cala — so peaceful here 🌊' },
+          { url: `${BASE_URL}/demo/mallorca/7.jpg`, caption: 'Wandering the golden streets of Valldemossa 🌿' },
+          { url: `${BASE_URL}/demo/mallorca/10.png`, caption: 'Rosé on a paddleboard in a secret cala — life is good 🥂' },
         ],
         reactions: [['❤️','Mum'],['😍','Jake'],['✨','Olivia'],['😮','Dad']],
         photoComment: 'That turquoise water!! Mallorca you have won me over completely',
@@ -419,8 +438,12 @@ app.post('/api/trips/:id/seed-demo', async (req, res) => {
         idx: 3, // Seville
         photos: [
           { url: `${BASE_URL}/demo/seville/1.jpg`, caption: 'Plaza de España — genuinely the most beautiful place I\'ve ever stood 😭' },
+          { url: `${BASE_URL}/demo/seville/2.jpg`, caption: 'Sitting on the azulejo tiles at Plaza de España — honestly could stay here forever' },
           { url: `${BASE_URL}/demo/seville/3.jpg`, caption: 'Orange trees in the courtyard of Seville Cathedral 🍊' },
+          { url: `${BASE_URL}/demo/seville/4.jpg`, caption: 'Las Setas at golden hour — the architecture in this city is something else' },
           { url: `${BASE_URL}/demo/seville/5.jpg`, caption: 'Night out in the old town — these streets go forever 🌙' },
+          { url: `${BASE_URL}/demo/seville/6.jpg`, caption: 'White dinner by the water — best group photo of the whole trip 🥂' },
+          { url: `${BASE_URL}/demo/seville/7.jpg`, caption: 'A flamenco dancer on the streets near the Giralda — this is Seville 💃' },
         ],
         reactions: [['❤️','Mum'],['😍','Olivia'],['🔥','Tom'],['❤️','Jake']],
         photoComment: 'Plaza de España looks like something from a movie set!!',
@@ -435,8 +458,12 @@ app.post('/api/trips/:id/seed-demo', async (req, res) => {
         idx: 4, // Lagos
         photos: [
           { url: `${BASE_URL}/demo/lagos/1.jpg`, caption: 'Ponta da Piedade — walking down to this view I actually gasped 🤯' },
+          { url: `${BASE_URL}/demo/lagos/2.jpg`, caption: 'Looking down into Benagil from above — the colours are not real 🌊' },
           { url: `${BASE_URL}/demo/lagos/3.jpg`, caption: 'Beach day at Praia do Camilo, waves crashing through the arch 🌊' },
+          { url: `${BASE_URL}/demo/lagos/4.jpg`, caption: 'Sitting on the clifftop looking through the twin arches at Praia da Marinha 🩵' },
+          { url: `${BASE_URL}/demo/lagos/5.jpg`, caption: 'Kayaking to the sea caves — she stood up and somehow didn\'t fall 😂' },
           { url: `${BASE_URL}/demo/lagos/6.jpg`, caption: 'Inside Benagil Cave — kayaked here at sunrise, worth every stroke 🚣' },
+          { url: `${BASE_URL}/demo/lagos/7.jpg`, caption: 'Paddling through the arches at Praia da Marinha — this coastline is extraordinary 🌊' },
         ],
         reactions: [['😍','Mum'],['❤️','Jake'],['🤩','Olivia'],['🔥','Tom'],['😭','Dad']],
         photoComment: 'Portugal is stealing my heart honestly 😭',
@@ -452,8 +479,11 @@ app.post('/api/trips/:id/seed-demo', async (req, res) => {
         idx: 5, // Lisbon
         photos: [
           { url: `${BASE_URL}/demo/lisbon/1.jpg`, caption: 'Caught the famous yellow tram in Alfama 🚃 iconic' },
+          { url: `${BASE_URL}/demo/lisbon/2.jpg`, caption: 'Tram 28 climbing through Alfama — bougainvillea everywhere 🌸' },
           { url: `${BASE_URL}/demo/lisbon/3.jpg`, caption: 'Sunset over the rooftops and the Tagus river from the miradouro 🌇' },
+          { url: `${BASE_URL}/demo/lisbon/4.jpg`, caption: 'Pastéis de nata and azulejo tiles — this is Lisbon in one photo 🧡' },
           { url: `${BASE_URL}/demo/lisbon/5.jpg`, caption: 'Found the cutest little arched doorway in Alfama — Lisbon is a dream 🏡' },
+          { url: `${BASE_URL}/demo/lisbon/6.jpg`, caption: 'Fresh pastéis de nata from Pastéis de Belém — mandatory 🥐' },
         ],
         reactions: [['❤️','Mum'],['😍','Dad'],['🥹','Olivia'],['🔥','Jake']],
         photoComment: 'Lisbon is the most charming city in Europe, change my mind',
@@ -468,8 +498,11 @@ app.post('/api/trips/:id/seed-demo', async (req, res) => {
         idx: 6, // Porto
         photos: [
           { url: `${BASE_URL}/demo/porto/1.jpg`, caption: 'Dom Luís Bridge at golden hour — Ribeira glowing below 🌅' },
+          { url: `${BASE_URL}/demo/porto/2.jpg`, caption: 'Ribeira framed by Dom Luís Bridge at sunset — Porto you beauty 🧡' },
           { url: `${BASE_URL}/demo/porto/3.jpg`, caption: 'The azulejo tiles at Porto Cathedral — stood here for way too long 💙' },
+          { url: `${BASE_URL}/demo/porto/4.jpg`, caption: 'Pastéis de nata warm from the bakery — mandatory stop every morning 🥐' },
           { url: `${BASE_URL}/demo/porto/5.jpg`, caption: 'Porto vintage prints by the Douro — bought four, no regrets 🖼️' },
+          { url: `${BASE_URL}/demo/porto/6.jpg`, caption: 'Walking down to the Douro through Ribeira — every staircase leads somewhere beautiful 🌊' },
         ],
         reactions: [['❤️','Mum'],['😍','Jake'],['🍷','Tom'],['✨','Olivia']],
         photoComment: 'Porto is giving me serious "I need to move here" feelings',
