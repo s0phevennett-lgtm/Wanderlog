@@ -21,35 +21,50 @@
 .blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
+  filter: blur(80px);
+  will-change: transform;
 }
 .blob1 {
-  width: 70vw; height: 70vw;
+  width: 80vw; height: 80vw;
   background: #1A3C5E;
-  top: -20%; left: -15%;
-  opacity: 0.85;
-  animation: drift1 20s ease-in-out infinite;
+  top: -30%; left: -20%;
+  opacity: 0.9;
+  animation: drift1 18s ease-in-out infinite;
 }
 .blob2 {
-  width: 55vw; height: 55vw;
+  width: 60vw; height: 60vw;
   background: #2E7D50;
-  top: 20%; right: -20%;
-  opacity: 0.65;
-  animation: drift2 26s ease-in-out infinite;
+  top: 30%; right: -25%;
+  opacity: 0.75;
+  animation: drift2 24s ease-in-out infinite;
 }
 .blob3 {
-  width: 55vw; height: 55vw;
-  background: #1a5f7a;
-  bottom: -15%; left: 20%;
-  opacity: 0.70;
-  animation: drift3 22s ease-in-out infinite;
+  width: 65vw; height: 65vw;
+  background: #1a6b8a;
+  bottom: -20%; left: 15%;
+  opacity: 0.80;
+  animation: drift3 20s ease-in-out infinite;
 }
 .blob4 {
+  width: 50vw; height: 50vw;
+  background: #2d4a9a;
+  top: 10%; right: 15%;
+  opacity: 0.60;
+  animation: drift4 28s ease-in-out infinite;
+}
+.blob5 {
   width: 45vw; height: 45vw;
-  background: #2d4a8a;
-  top: 5%; right: 20%;
+  background: #2a9d8f;
+  top: 50%; left: 30%;
   opacity: 0.55;
-  animation: drift4 30s ease-in-out infinite;
+  animation: drift5 22s ease-in-out infinite;
+}
+.blob6 {
+  width: 40vw; height: 40vw;
+  background: #0e4d7a;
+  bottom: 5%; right: 5%;
+  opacity: 0.65;
+  animation: drift6 16s ease-in-out infinite;
 }
 
 /* ── Card ── */
@@ -301,23 +316,43 @@
 
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes drift1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33%       { transform: translate(8%, 12%) scale(1.08); }
-  66%       { transform: translate(-4%, 6%) scale(0.96); }
+  0%   { transform: translate(0, 0)          scale(1);    }
+  20%  { transform: translate(6%, 10%)       scale(1.06); }
+  45%  { transform: translate(12%, 4%)       scale(0.96); }
+  70%  { transform: translate(4%, 14%)       scale(1.10); }
+  100% { transform: translate(0, 0)          scale(1);    }
 }
 @keyframes drift2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33%       { transform: translate(-10%, -8%) scale(1.05); }
-  66%       { transform: translate(6%, -14%) scale(1.1); }
+  0%   { transform: translate(0, 0)          scale(1);    }
+  25%  { transform: translate(-8%, -12%)     scale(1.08); }
+  55%  { transform: translate(-14%, -4%)     scale(0.93); }
+  80%  { transform: translate(-5%, -16%)     scale(1.05); }
+  100% { transform: translate(0, 0)          scale(1);    }
 }
 @keyframes drift3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  40%       { transform: translate(-8%, -10%) scale(1.12); }
-  70%       { transform: translate(5%, -5%) scale(0.94); }
+  0%   { transform: translate(0, 0)          scale(1);    }
+  30%  { transform: translate(10%, -8%)      scale(1.12); }
+  60%  { transform: translate(-6%, -14%)     scale(0.95); }
+  85%  { transform: translate(8%, -6%)       scale(1.07); }
+  100% { transform: translate(0, 0)          scale(1);    }
 }
 @keyframes drift4 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%       { transform: translate(12%, 8%) scale(1.06); }
+  0%   { transform: translate(0, 0)          scale(1);    }
+  35%  { transform: translate(14%, 6%)       scale(0.92); }
+  65%  { transform: translate(6%, 16%)       scale(1.10); }
+  100% { transform: translate(0, 0)          scale(1);    }
+}
+@keyframes drift5 {
+  0%   { transform: translate(0, 0)          scale(1);    }
+  40%  { transform: translate(-12%, 8%)      scale(1.14); }
+  75%  { transform: translate(8%, 12%)       scale(0.94); }
+  100% { transform: translate(0, 0)          scale(1);    }
+}
+@keyframes drift6 {
+  0%   { transform: translate(0, 0)          scale(1);    }
+  30%  { transform: translate(-10%, -10%)    scale(1.08); }
+  60%  { transform: translate(6%, -8%)       scale(0.96); }
+  100% { transform: translate(0, 0)          scale(1);    }
 }
 
 /* ── Loading full-page ── */

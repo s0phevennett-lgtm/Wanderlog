@@ -13,17 +13,12 @@ export default function CreateTrip() {
   const [result, setResult] = useState(null)
   const fileRef = useRef()
   const navigate = useNavigate()
-  const blobRefs = [useRef(), useRef(), useRef(), useRef()]
+  const blobRefs = [useRef(), useRef(), useRef(), useRef(), useRef(), useRef()]
 
   useEffect(() => {
-    const targets = [
-      { x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }
-    ]
-    const current = [
-      { x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }
-    ]
-    // Different parallax strengths per blob
-    const strength = [55, -40, 35, -60]
+    const targets = Array.from({ length: 6 }, () => ({ x: 0, y: 0 }))
+    const current = Array.from({ length: 6 }, () => ({ x: 0, y: 0 }))
+    const strength = [55, -40, 35, -65, 48, -30]
     let rafId
 
     const onMove = (e) => {
@@ -104,6 +99,8 @@ export default function CreateTrip() {
           <div ref={blobRefs[1]} className={`${styles.blob} ${styles.blob2}`}/>
           <div ref={blobRefs[2]} className={`${styles.blob} ${styles.blob3}`}/>
           <div ref={blobRefs[3]} className={`${styles.blob} ${styles.blob4}`}/>
+          <div ref={blobRefs[4]} className={`${styles.blob} ${styles.blob5}`}/>
+          <div ref={blobRefs[5]} className={`${styles.blob} ${styles.blob6}`}/>
         </div>
         <div className={styles.card}>
           <div className={styles.successIcon}>✈️</div>
