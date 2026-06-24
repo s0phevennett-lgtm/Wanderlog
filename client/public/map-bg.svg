@@ -1,0 +1,205 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+  <rect width="1400" height="900" fill="#2d5a3d"/>
+  <g stroke="#8fbfcf" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- ═══ EIFFEL TOWER (left, centered x=195) ═══ -->
+    <g transform="translate(195,105)">
+      <!-- Antenna -->
+      <line x1="0" y1="-32" x2="0" y2="0"/>
+      <line x1="-3" y1="-28" x2="3" y2="-28"/>
+      <!-- Top narrow section -->
+      <path d="M-7,0 L7,0 L14,72 L-14,72"/>
+      <!-- Second floor platform -->
+      <line x1="-19" y1="72" x2="19" y2="72"/>
+      <!-- Mid section -->
+      <path d="M-14,72 L14,72 L26,154 L-26,154"/>
+      <!-- First floor platform -->
+      <line x1="-33" y1="154" x2="33" y2="154"/>
+      <!-- Legs sweep outward -->
+      <path d="M-26,154 Q-42,188 -55,245"/>
+      <path d="M-16,154 Q-20,188 -21,245"/>
+      <path d="M26,154 Q42,188 55,245"/>
+      <path d="M16,154 Q20,188 21,245"/>
+      <!-- Base -->
+      <line x1="-55" y1="245" x2="55" y2="245"/>
+      <!-- Arch between legs -->
+      <path d="M-21,245 Q0,215 21,245"/>
+      <!-- Cross braces upper legs -->
+      <path d="M-50,200 Q0,186 50,200"/>
+      <path d="M-47,228 Q0,215 47,228"/>
+      <!-- Mid braces -->
+      <path d="M-24,108 Q0,97 24,108"/>
+      <path d="M-20,128 Q0,118 20,128"/>
+      <!-- Lattice hint on legs -->
+      <path d="M-38,172 L-28,190 M28,190 L38,172"/>
+      <path d="M-48,215 L-34,235 M34,235 L48,215"/>
+    </g>
+
+    <!-- ═══ GONDOLA (bottom left) ═══ -->
+    <g transform="translate(155,790)">
+      <!-- Hull - long narrow elegant shape -->
+      <path d="M-105,-5 Q-100,-22 -75,-26 Q-40,-30 0,-30 Q40,-30 75,-26 Q100,-18 108,2 Q103,22 75,28 Q40,32 0,32 Q-50,28 -90,14 Z"/>
+      <!-- High curved prow -->
+      <path d="M-105,-5 Q-116,-12 -114,-32 Q-112,-50 -106,-58"/>
+      <!-- Low curved stern -->
+      <path d="M108,2 Q118,-4 116,-18"/>
+      <!-- Gondolier pole -->
+      <line x1="68" y1="-30" x2="76" y2="-110"/>
+      <!-- Gondolier figure -->
+      <circle cx="76" cy="-120" r="9"/>
+      <path d="M76,-111 L72,-88 Q70,-72 74,-60"/>
+      <path d="M72,-88 L60,-78 M72,-88 L84,-80"/>
+      <!-- Water ripples -->
+      <path d="M-135,50 Q-108,41 -81,50 Q-54,59 -27,50"/>
+      <path d="M27,52 Q54,43 81,52 Q108,61 135,52"/>
+      <path d="M-135,68 Q-102,59 -69,68 Q-36,77 -3,68"/>
+      <path d="M3,70 Q36,61 69,70 Q102,79 135,70"/>
+    </g>
+
+    <!-- Label -->
+    <text x="55" y="755" font-size="16" fill="#8fbfcf" font-family="Georgia,serif" font-style="italic">Venezia</text>
+    <text x="100" y="372" font-size="16" fill="#8fbfcf" font-family="Georgia,serif" font-style="italic" transform="rotate(-5,100,372)">Paris</text>
+
+    <!-- ═══ HOT AIR BALLOON (top right) ═══ -->
+    <g transform="translate(1290,165)">
+      <!-- Envelope - proper rounded shape -->
+      <path d="M0,-125 Q72,-125 85,-65 Q95,0 70,55 Q48,95 0,105 Q-48,95 -70,55 Q-95,0 -85,-65 Q-72,-125 0,-125Z"/>
+      <!-- Vertical panel seams -->
+      <path d="M0,-125 Q18,-65 0,105"/>
+      <path d="M0,-125 Q-18,-65 0,105"/>
+      <!-- Equatorial band -->
+      <path d="M-88,-25 Q0,-8 88,-25"/>
+      <!-- Lower band -->
+      <path d="M-72,55 Q0,68 72,55"/>
+      <!-- Suspension lines -->
+      <line x1="-58" y1="95" x2="-18" y2="115"/>
+      <line x1="58" y1="95" x2="18" y2="115"/>
+      <line x1="-22" y1="102" x2="-14" y2="115"/>
+      <line x1="22" y1="102" x2="14" y2="115"/>
+      <!-- Wicker basket -->
+      <path d="M-20,115 L-20,142 Q-20,148 0,148 Q20,148 20,142 L20,115Z"/>
+      <line x1="-20" y1="128" x2="20" y2="128"/>
+      <line x1="0" y1="115" x2="0" y2="148"/>
+    </g>
+    <text x="1175" y="82" font-size="15" fill="#8fbfcf" font-family="Georgia,serif" font-style="italic" transform="rotate(-3,1175,82)">Cappadocia</text>
+
+    <!-- ═══ MOSQUE WITH MINARETS (right middle) ═══ -->
+    <g transform="translate(1210,570)">
+      <!-- Main dome -->
+      <path d="M-60,0 Q-60,-88 0,-105 Q60,-88 60,0Z"/>
+      <!-- Dome finial -->
+      <line x1="0" y1="-105" x2="0" y2="-122"/>
+      <!-- Small half dome on top of main dome -->
+      <path d="M-14,-105 Q0,-120 14,-105"/>
+      <!-- Left minaret -->
+      <rect x="-95" y="-130" width="18" height="130"/>
+      <!-- Left minaret balcony ring -->
+      <line x1="-99" y1="-88" x2="-77" y2="-88"/>
+      <line x1="-99" y1="-85" x2="-77" y2="-85"/>
+      <!-- Left minaret pointed cap -->
+      <path d="M-95,-130 L-86,-158 L-77,-130"/>
+      <!-- Right minaret -->
+      <rect x="77" y="-130" width="18" height="130"/>
+      <!-- Right minaret balcony ring -->
+      <line x1="73" y1="-88" x2="95" y2="-88"/>
+      <line x1="73" y1="-85" x2="95" y2="-85"/>
+      <!-- Right minaret pointed cap -->
+      <path d="M77,-130 L86,-158 L95,-130"/>
+      <!-- Front wall -->
+      <rect x="-75" y="0" width="150" height="28"/>
+      <!-- Central arched door -->
+      <path d="M-13,28 L-13,10 Q-13,-5 0,-5 Q13,-5 13,10 L13,28"/>
+      <!-- Side arched windows -->
+      <path d="M-55,28 L-55,12 Q-55,2 -45,2 Q-35,2 -35,12 L-35,28"/>
+      <path d="M35,28 L35,12 Q35,2 45,2 Q55,2 55,12 L55,28"/>
+    </g>
+    <text x="1095" y="462" font-size="16" fill="#8fbfcf" font-family="Georgia,serif" font-style="italic" transform="rotate(3,1095,462)">Istanbul</text>
+
+    <!-- ═══ ALPS MOUNTAINS (top left) ═══ -->
+    <g>
+      <!-- Back peak (lighter) -->
+      <path d="M28,188 L110,38 L192,188" opacity="0.5"/>
+      <!-- Main peaks -->
+      <path d="M108,188 L186,55 L268,188"/>
+      <path d="M195,188 L256,85 L320,188"/>
+      <!-- Snow caps -->
+      <path d="M163,95 L186,55 L210,95 Q186,82 163,95Z" fill="#8fbfcf" fill-opacity="0.15"/>
+      <path d="M233,115 L256,85 L278,115 Q256,104 233,115Z" fill="#8fbfcf" fill-opacity="0.15"/>
+      <!-- Snowline strokes -->
+      <path d="M163,95 Q186,82 210,95"/>
+      <path d="M233,115 Q256,104 278,115"/>
+      <!-- Ground -->
+      <path d="M18,192 Q170,180 330,192"/>
+    </g>
+    <text x="128" y="222" font-size="15" fill="#8fbfcf" font-family="Georgia,serif" font-style="italic" transform="rotate(-4,128,222)">The Alps</text>
+
+    <!-- ═══ AIRPLANE (top centre) ═══ -->
+    <g transform="translate(705,54) rotate(12)">
+      <!-- Fuselage -->
+      <path d="M-68,0 Q-45,-13 0,-13 Q48,-13 68,0 Q48,13 0,13 Q-45,13 -68,0Z"/>
+      <!-- Nose cone -->
+      <path d="M62,-6 Q76,0 62,6"/>
+      <!-- Main wing -->
+      <path d="M5,-13 L-12,-52 L38,-52 L38,-13"/>
+      <!-- Wing tip -->
+      <path d="M-12,-52 Q-18,-56 -20,-52"/>
+      <!-- Vertical tail fin -->
+      <path d="M-55,-13 L-68,-42 L-52,-42 L-52,-13"/>
+      <!-- Horizontal tail fins -->
+      <path d="M-58,-4 L-74,-20 L-55,-20 L-56,-4"/>
+      <path d="M-58,4 L-74,20 L-55,20 L-56,4"/>
+      <!-- Porthole windows -->
+      <circle cx="-10" cy="0" r="4" stroke-width="1"/>
+      <circle cx="10" cy="0" r="4" stroke-width="1"/>
+      <circle cx="28" cy="-1" r="4" stroke-width="1"/>
+    </g>
+
+    <!-- ═══ PALM TREES (bottom right) ═══ -->
+    <g transform="translate(1268,640)">
+      <!-- Palm 1 curved trunk -->
+      <path d="M8,225 Q6,185 3,145 Q0,110 -4,80 Q-6,55 0,30"/>
+      <!-- Palm 1 fronds -->
+      <path d="M0,30 Q-8,8 -38,0 Q-20,18 0,30"/>
+      <path d="M0,30 Q8,5 38,-2 Q20,16 0,30"/>
+      <path d="M0,30 Q18,10 42,18 Q24,24 0,30"/>
+      <path d="M0,30 Q-18,12 -44,20 Q-25,26 0,30"/>
+      <path d="M0,30 Q2,5 8,-18"/>
+      <!-- Palm 1 coconuts -->
+      <circle cx="4" cy="40" r="6"/>
+      <circle cx="-5" cy="44" r="5"/>
+
+      <!-- Palm 2 curved trunk (leans other way) -->
+      <path d="M75,228 Q80,185 86,145 Q92,112 95,82 Q98,55 88,28"/>
+      <!-- Palm 2 fronds -->
+      <path d="M88,28 Q80,4 50,-4 Q68,14 88,28"/>
+      <path d="M88,28 Q96,2 126,-6 Q108,12 88,28"/>
+      <path d="M88,28 Q108,6 130,16 Q112,22 88,28"/>
+      <path d="M88,28 Q68,8 46,18 Q65,24 88,28"/>
+      <path d="M88,28 Q92,2 96,-20"/>
+      <!-- Palm 2 coconuts -->
+      <circle cx="92" cy="38" r="5"/>
+      <circle cx="82" cy="41" r="5"/>
+    </g>
+    <text x="1240" y="885" font-size="14" fill="#8fbfcf" font-family="Georgia,serif" font-style="italic">The Tropics</text>
+
+    <!-- ═══ COMPASS ROSE (bottom centre) ═══ -->
+    <g transform="translate(700,852)">
+      <polygon points="0,-30 5,-11 0,-6 -5,-11" fill="#8fbfcf"/>
+      <polygon points="0,30 5,11 0,6 -5,11" fill="#8fbfcf" opacity="0.45"/>
+      <polygon points="-30,0 -11,-5 -6,0 -11,5" fill="#8fbfcf" opacity="0.45"/>
+      <polygon points="30,0 11,-5 6,0 11,5" fill="#8fbfcf" opacity="0.45"/>
+      <circle cx="0" cy="0" r="5" fill="#8fbfcf"/>
+      <circle cx="0" cy="0" r="16" stroke-width="0.8"/>
+      <text x="0" y="-38" text-anchor="middle" font-size="13" fill="#8fbfcf" font-family="Georgia,serif">N</text>
+    </g>
+
+    <!-- ═══ Water ripples ═══ -->
+    <g opacity="0.55">
+      <path d="M38,545 Q62,535 86,545 Q110,555 134,545"/>
+      <path d="M35,562 Q62,552 86,562 Q112,572 136,562"/>
+      <path d="M1265,350 Q1290,340 1315,350 Q1340,360 1365,350"/>
+      <path d="M1262,367 Q1290,357 1315,367 Q1342,377 1367,367"/>
+    </g>
+
+  </g>
+</svg>
