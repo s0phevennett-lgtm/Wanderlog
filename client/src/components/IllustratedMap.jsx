@@ -76,7 +76,7 @@ export default function IllustratedMap({ stops, liveLocation, selectedStop, onSe
       className="ilm-container"
     >
       <TileLayer
-        url="https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg"
+        url={`https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg${import.meta.env.VITE_STADIA_KEY ? `?api_key=${import.meta.env.VITE_STADIA_KEY}` : ''}`}
         attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, CC BY 3.0 — Map data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
       <FitBounds stops={stops} liveLocation={liveLocation} />
