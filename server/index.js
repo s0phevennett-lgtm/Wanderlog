@@ -364,48 +364,120 @@ app.post('/api/trips/:id/seed-demo', async (req, res) => {
     const { data: stops } = await supabase.from('stops').select().eq('trip_id', req.params.id).order('position')
     if (!stops?.length) return res.status(400).json({ error: 'No stops' })
 
+    const BASE_URL = process.env.CLIENT_URL || 'https://wanderlog-cyan.vercel.app'
     const seed = [
       {
-        idx: 0, // Paris
+        idx: 0, // Barcelona
         photos: [
-          { url: 'https://picsum.photos/id/338/900/600',  caption: 'Golden hour at the Eiffel Tower — worth every step ✨' },
-          { url: 'https://picsum.photos/id/1060/900/600', caption: 'Morning croissants near Montmartre ☕' },
+          { url: `${BASE_URL}/demo/barcelona/1.jpg`, caption: 'First morning in Barcelona — Sagrada Família took my breath away 🙏' },
+          { url: `${BASE_URL}/demo/barcelona/3.jpg`, caption: 'Gothic Quarter streets, could walk here forever' },
+          { url: `${BASE_URL}/demo/barcelona/5.jpg`, caption: 'Patatas bravas and cava at the mercado 🥂' },
         ],
         reactions: [['❤️','Mum'],['😍','Jake'],['🔥','Olivia'],['😭','Dad']],
         photoComment: 'This is STUNNING!! So jealous right now 😭',
         stopComments: [
-          { author_name: 'Mum',    body: 'Oh my goodness it looks absolutely incredible!! Living vicariously through you 😭' },
-          { author_name: 'Jake',   body: 'Have you been to Sainte-Chapelle yet? It\'s a must — the stained glass is unreal' },
-          { author_name: 'Sophie', body: 'Adding it to the list right now! So many things to see' },
+          { author_name: 'Mum',    body: 'Oh my goodness it looks incredible!! So jealous living vicariously through you 😭' },
+          { author_name: 'Jake',   body: 'Did you make it to Park Güell?? The views from up there are unreal' },
+          { author_name: 'Sophie', body: 'Yes!! We went at sunrise to beat the crowds — absolutely magical' },
           { author_name: 'Olivia', body: 'What\'s the food like?? Tell me everything' },
+          { author_name: 'Sophie', body: 'Olivia I have eaten so much jamón I might turn into it 😂' },
         ],
       },
       {
-        idx: 1, // Barcelona
+        idx: 1, // Ibiza
         photos: [
-          { url: 'https://picsum.photos/id/1019/900/600', caption: 'Sagrada Família — even more mind-blowing in person 🙏' },
+          { url: `${BASE_URL}/demo/ibiza/1.jpg`, caption: 'Found a hidden cove — keeping the location a secret 🤫' },
+          { url: `${BASE_URL}/demo/ibiza/4.jpg`, caption: 'Sunset from Café del Mar, nothing else like it 🌅' },
+          { url: `${BASE_URL}/demo/ibiza/7.jpg`, caption: 'Es Vedrà in the golden hour light ✨' },
         ],
-        reactions: [['❤️','Mum'],['😍','Tom'],['✨','Olivia']],
-        photoComment: 'Gaudí was a genius honestly',
+        reactions: [['🔥','Jake'],['😍','Olivia'],['❤️','Mum'],['🤩','Tom']],
+        photoComment: 'The water is actually that colour in real life!!',
         stopComments: [
-          { author_name: 'Dad',    body: 'Stay safe sweetheart! Are you eating properly?' },
-          { author_name: 'Sophie', body: 'Dad the tapas are literally INCREDIBLE. Having the best time 😂' },
-          { author_name: 'Tom',    body: 'Did you make it to the Gothic Quarter? Favourite neighbourhood in all of Europe' },
+          { author_name: 'Tom',    body: 'Okay I am officially booking flights right now, this looks incredible' },
+          { author_name: 'Sophie', body: 'DO IT. Best decision I\'ve ever made 🙌' },
+          { author_name: 'Mum',    body: 'That water colour doesn\'t look real!! Is it edited??' },
+          { author_name: 'Sophie', body: 'Mum I promise it\'s totally real 😂 Mediterranean magic' },
         ],
       },
       {
-        idx: 2, // Rome
+        idx: 2, // Mallorca
         photos: [
-          { url: 'https://picsum.photos/id/493/900/600',  caption: 'The Colosseum — hard to believe it\'s actually real' },
-          { url: 'https://picsum.photos/id/1040/900/600', caption: 'Sunset over the Roman Forum 🌅' },
+          { url: `${BASE_URL}/demo/mallorca/1.jpg`, caption: 'Renting a little boat and exploring the coastline 🚤' },
+          { url: `${BASE_URL}/demo/mallorca/3.jpg`, caption: 'Serra de Tramuntana — worth every switchback' },
+          { url: `${BASE_URL}/demo/mallorca/5.jpg`, caption: 'Morning ensaïmada at a village café ☕' },
         ],
-        reactions: [['❤️','Mum'],['😍','Jake'],['🔥','Tom'],['❤️','Olivia'],['😮','Dad']],
-        photoComment: 'Two thousand years of history just staring back at you 🤯',
+        reactions: [['❤️','Mum'],['😍','Jake'],['✨','Olivia'],['😮','Dad']],
+        photoComment: 'The mountains AND the beach?? Mallorca has it all honestly',
         stopComments: [
-          { author_name: 'Olivia', body: 'I am SO envious!! Please eat some gelato for me' },
-          { author_name: 'Sophie', body: 'I\'ve had gelato literally every single day 😂 no regrets' },
-          { author_name: 'Jake',   body: 'Which has been your favourite city so far??' },
-          { author_name: 'Sophie', body: 'Impossible question honestly... Rome might be edging it' },
+          { author_name: 'Dad',    body: 'Stay safe on those mountain roads sweetheart! Looks absolutely gorgeous' },
+          { author_name: 'Sophie', body: 'Dad it\'s so beautiful here, the views from the top are incredible' },
+          { author_name: 'Jake',   body: 'Did you hire a car? The north of the island is so worth exploring' },
+          { author_name: 'Sophie', body: 'Yes!! Drove all the way to Cap de Formentor, mind-blowing' },
+        ],
+      },
+      {
+        idx: 3, // Seville
+        photos: [
+          { url: `${BASE_URL}/demo/seville/1.jpg`, caption: 'The Alcázar is genuinely the most beautiful place I\'ve ever been 😭' },
+          { url: `${BASE_URL}/demo/seville/3.jpg`, caption: 'Flamenco show in Triana — spine-tingling' },
+          { url: `${BASE_URL}/demo/seville/5.jpg`, caption: 'Tapas crawl through Santa Cruz neighbourhood 🍷' },
+        ],
+        reactions: [['❤️','Mum'],['😍','Olivia'],['🔥','Tom'],['❤️','Jake']],
+        photoComment: 'The Alcázar looks like something from a fairytale!!',
+        stopComments: [
+          { author_name: 'Olivia', body: 'SEVILLE!! My favourite city in the whole world, you\'re going to love it' },
+          { author_name: 'Sophie', body: 'Olivia you were SO right. I am obsessed with this place' },
+          { author_name: 'Tom',    body: 'Make sure you go up the Giralda at sunset, the views are something else' },
+          { author_name: 'Sophie', body: 'Did it last night — 100% the best sunset of the whole trip so far!' },
+        ],
+      },
+      {
+        idx: 4, // Lagos
+        photos: [
+          { url: `${BASE_URL}/demo/lagos/1.jpg`, caption: 'Ponta da Piedade — these sea stacks don\'t look real 🤯' },
+          { url: `${BASE_URL}/demo/lagos/3.jpg`, caption: 'Kayaking through the sea caves 🚣' },
+          { url: `${BASE_URL}/demo/lagos/6.jpg`, caption: 'Meia Praia at golden hour — the most perfect beach' },
+        ],
+        reactions: [['😍','Mum'],['❤️','Jake'],['🤩','Olivia'],['🔥','Tom'],['😭','Dad']],
+        photoComment: 'Portugal is stealing my heart honestly 😭',
+        stopComments: [
+          { author_name: 'Mum',    body: 'Sophie those cliffs!! I actually gasped looking at this photo' },
+          { author_name: 'Sophie', body: 'Mum they are even MORE dramatic in person. I cried a little bit 😂' },
+          { author_name: 'Jake',   body: 'Which has been your favourite stop so far??' },
+          { author_name: 'Sophie', body: 'Honestly impossible to choose but Lagos might be it... the nature is just unreal' },
+          { author_name: 'Olivia', body: 'I knew Portugal would steal your heart 🥹' },
+        ],
+      },
+      {
+        idx: 5, // Lisbon
+        photos: [
+          { url: `${BASE_URL}/demo/lisbon/1.jpg`, caption: 'Tram 28 through Alfama — the most charming city 🚃' },
+          { url: `${BASE_URL}/demo/lisbon/3.jpg`, caption: 'View from Miradouro da Graça at sunset 🌇' },
+          { url: `${BASE_URL}/demo/lisbon/5.jpg`, caption: 'Pastéis de nata from Pastéis de Belém — life changing ☁️' },
+        ],
+        reactions: [['❤️','Mum'],['😍','Dad'],['🥹','Olivia'],['🔥','Jake']],
+        photoComment: 'Lisbon is the most underrated city in Europe change my mind',
+        stopComments: [
+          { author_name: 'Dad',    body: 'Your grandmother would have loved Lisbon, she always wanted to go' },
+          { author_name: 'Sophie', body: 'Dad that made me tear up a little 🥹 I\'m thinking of her' },
+          { author_name: 'Tom',    body: 'Have you been to LX Factory?? The weekend market is incredible' },
+          { author_name: 'Sophie', body: 'Going tomorrow!! Thanks for the tip 🙌' },
+        ],
+      },
+      {
+        idx: 6, // Porto
+        photos: [
+          { url: `${BASE_URL}/demo/porto/1.jpg`, caption: 'Ribeira district at golden hour — I never want to leave 🌅' },
+          { url: `${BASE_URL}/demo/porto/3.jpg`, caption: 'Port wine tasting in a 300-year-old cellar 🍷' },
+          { url: `${BASE_URL}/demo/porto/5.jpg`, caption: 'São Bento station — the most beautiful train station in the world?' },
+        ],
+        reactions: [['❤️','Mum'],['😍','Jake'],['🍷','Tom'],['✨','Olivia']],
+        photoComment: 'Porto is giving me serious "I need to move here" feelings',
+        stopComments: [
+          { author_name: 'Olivia', body: 'Porto is the BEST final stop, ending on a high note 🥂' },
+          { author_name: 'Sophie', body: 'It really is perfect. Also I may have bought 6 bottles of port wine to bring home...' },
+          { author_name: 'Jake',   body: 'Only 6?? 😂' },
+          { author_name: 'Mum',    body: 'Come home soon we miss you!! Save some port for us 🥹' },
         ],
       },
     ]
@@ -426,15 +498,15 @@ app.post('/api/trips/:id/seed-demo', async (req, res) => {
       }
     }
 
-    // Check in at Rome (stop index 2)
-    const liveStop = stops[2] || stops[0]
+    // Check in at Porto (last stop)
+    const liveStop = stops[stops.length - 1]
     const existing = await supabase.from('live_locations').select().eq('trip_id', req.params.id).maybeSingle()
     const payload = {
       trip_id: req.params.id, stop_id: liveStop.id,
       lat: liveStop.lat, lng: liveStop.lng,
-      message: 'Exploring the ancient ruins of Rome — this city is absolutely unreal!',
-      status: 'Sightseeing',
-      journal_entry: 'Standing in the shadow of the Colosseum, it\'s impossible not to feel the weight of two thousand years pressing down on you. Every weathered stone holds a story.',
+      message: 'Last stop — Porto is the most perfect ending to this trip 🍷',
+      status: 'Exploring',
+      journal_entry: 'The Douro glitters below as the sun sets behind the port wine cellars. I\'ve been travelling for four weeks and somehow Porto feels like the most alive I\'ve been. I\'m not ready to go home.',
       updated_at: new Date().toISOString(),
     }
     if (existing.data) {
@@ -444,18 +516,19 @@ app.post('/api/trips/:id/seed-demo', async (req, res) => {
     }
 
     // Poll
-    const { data: poll } = await supabase.from('polls').insert({ trip_id: req.params.id, question: 'Which city should I spend an extra day in?', stop_id: null }).select().single()
+    const { data: poll } = await supabase.from('polls').insert({ trip_id: req.params.id, question: 'Which was my best stop?', stop_id: null }).select().single()
     if (poll) {
-      const opts = ['Paris','Barcelona','Rome','Santorini'].map((label, i) => ({ poll_id: poll.id, label, position: i }))
+      const opts = ['Barcelona 🇪🇸','Ibiza 🏝️','Seville 💃','Lagos 🌊','Porto 🍷'].map((label, i) => ({ poll_id: poll.id, label, position: i }))
       const { data: pollOptions } = await supabase.from('poll_options').insert(opts).select()
-      // Add a couple of votes
-      if (pollOptions?.length >= 3) {
+      if (pollOptions?.length >= 5) {
         await supabase.from('poll_votes').insert([
           { poll_option_id: pollOptions[0].id, voter_name: 'Mum',    voter_token: uuidv4() },
-          { poll_option_id: pollOptions[2].id, voter_name: 'Jake',   voter_token: uuidv4() },
-          { poll_option_id: pollOptions[2].id, voter_name: 'Olivia', voter_token: uuidv4() },
-          { poll_option_id: pollOptions[3].id, voter_name: 'Tom',    voter_token: uuidv4() },
-          { poll_option_id: pollOptions[3].id, voter_name: 'Dad',    voter_token: uuidv4() },
+          { poll_option_id: pollOptions[3].id, voter_name: 'Jake',   voter_token: uuidv4() },
+          { poll_option_id: pollOptions[3].id, voter_name: 'Olivia', voter_token: uuidv4() },
+          { poll_option_id: pollOptions[4].id, voter_name: 'Tom',    voter_token: uuidv4() },
+          { poll_option_id: pollOptions[4].id, voter_name: 'Dad',    voter_token: uuidv4() },
+          { poll_option_id: pollOptions[1].id, voter_name: 'Ella',   voter_token: uuidv4() },
+          { poll_option_id: pollOptions[2].id, voter_name: 'Marco',  voter_token: uuidv4() },
         ])
       }
     }

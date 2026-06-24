@@ -16,15 +16,17 @@ export default function CreateTrip() {
   const blobRefs = [useRef(), useRef(), useRef(), useRef(), useRef(), useRef()]
 
   const EXAMPLE_TRIP = {
-    trip_name: 'Best of Europe — Summer 2026',
-    start_date: '2026-07-01',
-    end_date: '2026-07-22',
+    trip_name: 'Spain & Portugal Summer 2025',
+    start_date: '2025-07-01',
+    end_date: '2025-07-28',
     stops: [
-      { name: 'Paris, France',            lat: 48.8566,  lng:  2.3522,  arrival_date: '2026-07-01', departure_date: '2026-07-05', notes: 'The city of light — Eiffel Tower, the Louvre, and endless café au laits.' },
-      { name: 'Barcelona, Spain',         lat: 41.3851,  lng:  2.1734,  arrival_date: '2026-07-05', departure_date: '2026-07-09', notes: 'Gaudí architecture, tapas on Las Ramblas, and beach days.' },
-      { name: 'Rome, Italy',              lat: 41.9028,  lng: 12.4964,  arrival_date: '2026-07-09', departure_date: '2026-07-14', notes: 'The Colosseum, Vatican City, and the best carbonara of my life.' },
-      { name: 'Santorini, Greece',        lat: 36.3932,  lng: 25.4615,  arrival_date: '2026-07-14', departure_date: '2026-07-18', notes: 'Clifftop villages, volcanic beaches, and sunsets from Oia.' },
-      { name: 'Amsterdam, Netherlands',   lat: 52.3676,  lng:  4.9041,  arrival_date: '2026-07-18', departure_date: '2026-07-22', notes: 'Canal cruises, the Rijksmuseum, and cycling everywhere.' },
+      { name: 'Barcelona, Spain',  lat: 41.3851, lng:  2.1734, arrival_date: '2025-07-01', departure_date: '2025-07-05', notes: 'Gaudí, beach bars, and the best patatas bravas of my life.' },
+      { name: 'Ibiza, Spain',      lat: 38.9067, lng:  1.4206, arrival_date: '2025-07-05', departure_date: '2025-07-09', notes: 'Island hopping, hidden coves, and incredible sunsets at Café del Mar.' },
+      { name: 'Mallorca, Spain',   lat: 39.6953, lng:  3.0176, arrival_date: '2025-07-09', departure_date: '2025-07-13', notes: 'Crystal clear water, mountain villages, and fresh ensaïmada every morning.' },
+      { name: 'Seville, Spain',    lat: 37.3891, lng: -5.9845, arrival_date: '2025-07-13', departure_date: '2025-07-17', notes: 'Flamenco, the Alcázar, and orange trees lining every street.' },
+      { name: 'Lagos, Portugal',   lat: 37.1021, lng: -8.6754, arrival_date: '2025-07-17', departure_date: '2025-07-21', notes: 'Sea caves, golden cliffs, and the most beautiful beaches in Europe.' },
+      { name: 'Lisbon, Portugal',  lat: 38.7169, lng: -9.1395, arrival_date: '2025-07-21', departure_date: '2025-07-25', notes: 'Trams, fado music, pastéis de nata, and views from every miradouro.' },
+      { name: 'Porto, Portugal',   lat: 41.1579, lng: -8.6291, arrival_date: '2025-07-25', departure_date: '2025-07-28', notes: 'Port wine cellars, colourful azulejos, and the Douro at sunset.' },
     ]
   }
 
