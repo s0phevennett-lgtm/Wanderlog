@@ -76,8 +76,8 @@ export default function IllustratedMap({ stops, liveLocation, selectedStop, onSe
       className="ilm-container"
     >
       <TileLayer
-        url="https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg"
-        attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, CC BY 3.0 — Map data © OpenStreetMap contributors'
+        url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+        attribution='© <a href="https://carto.com/">CARTO</a> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
       <FitBounds stops={stops} liveLocation={liveLocation} />
       <FlyTo stop={selectedStop} />
