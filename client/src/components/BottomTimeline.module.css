@@ -5,6 +5,32 @@
   background: white;
   border-top: 1px solid rgba(0,0,0,0.07);
   overflow: hidden;
+  position: relative;
+}
+
+/* ── Hint banner ── */
+.hint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--forest);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  text-align: center;
+  padding: 5px 12px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  animation: hintFadeOut 5s forwards;
+  z-index: 10;
+}
+
+@keyframes hintFadeOut {
+  0%   { opacity: 1; transform: translateY(0); }
+  70%  { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-4px); pointer-events: none; }
 }
 
 /* ── Scroll arrows ── */
@@ -57,8 +83,10 @@
 }
 
 .stopCard:hover {
-  background: #f5f0e8;
-  transform: translateY(-1px);
+  background: #f0ebe0;
+  transform: translateY(-3px);
+  border-color: rgba(46,125,80,0.35) !important;
+  box-shadow: 0 4px 14px rgba(46,125,80,0.12);
 }
 
 /* Status: selected */
@@ -139,6 +167,19 @@
   font-size: 9.5px;
   color: #64748b;
   white-space: nowrap;
+}
+
+.exploreLabel {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--forest);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+.stopCard:hover .exploreLabel {
+  opacity: 1;
 }
 
 /* ── Connector arrow between stops ── */

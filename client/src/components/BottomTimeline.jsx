@@ -1,9 +1,15 @@
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { getIconForStop, getStopStatus, fmtDate } from './buildingIcons'
 import styles from './BottomTimeline.module.css'
 
 export default function BottomTimeline({ stops, liveLocation, selectedStop, onSelectStop }) {
   const scrollRef = useRef()
+  const [showHint, setShowHint] = useState(true)
+
+  useEffect(() => {
+    const t = setTimeout(() => setShowHint(false), 5000)
+    return () => clearTimeout(t)
+  }, [])
 
   function scroll(dir) {
     scrollRef.current?.scrollBy({ left: dir * 200, behavior: 'smooth' })
@@ -11,6 +17,11 @@ export default function BottomTimeline({ stops, liveLocation, selectedStop, onSe
 
   return (
     <div className={styles.strip}>
+      {showHint && (
+        <div className={styles.hint} onClick={() => setShowHint(false)}>
+          📸 Click any stop to explore photos &amp; updates
+        </div>
+      )}
       <button className={styles.arrow} onClick={() => scroll(-1)}>‹</button>
 
       <div className={styles.scroll} ref={scrollRef}>
@@ -53,6 +64,7 @@ export default function BottomTimeline({ stops, liveLocation, selectedStop, onSe
               {/* Labels */}
               <span className={styles.city}>{city}</span>
               {dateStr && <span className={styles.dates}>{dateStr}</span>}
+              <span className={styles.exploreLabel}>📷 explore</span>
             </button>,
 
             /* Connector arrow between stops */
