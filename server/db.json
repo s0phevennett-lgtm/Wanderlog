@@ -1,0 +1,292 @@
+{
+  "trips": [
+    {
+      "id": "a31c12e8-fe4d-4625-bd92-a6718461fd53",
+      "name": "Sangria to Fado",
+      "start_date": "2026-07-12",
+      "end_date": "2026-08-09",
+      "admin_token": "1fc2647a-f04e-4328-b914-958689623345",
+      "created_at": "2026-06-22T05:46:50.025Z"
+    }
+  ],
+  "stops": [
+    {
+      "id": "stop_1",
+      "trip_id": "a31c12e8-fe4d-4625-bd92-a6718461fd53",
+      "name": "Barcelona, Spain",
+      "lat": 41.3851,
+      "lng": 2.1734,
+      "arrival_date": "2026-07-12",
+      "departure_date": "2026-07-15",
+      "notes": "Stay: chic&basic Born Boutique Hotel (El Born / Gothic Quarter)",
+      "position": 0
+    },
+    {
+      "id": "stop_2",
+      "trip_id": "a31c12e8-fe4d-4625-bd92-a6718461fd53",
+      "name": "Mallorca, Spain",
+      "lat": 39.5696,
+      "lng": 2.6502,
+      "arrival_date": "2026-07-15",
+      "departure_date": "2026-07-18",
+      "notes": "Stay: Hotel Basilica (Palma old town)",
+      "position": 1
+    },
+    {
+      "id": "stop_3",
+      "trip_id": "a31c12e8-fe4d-4625-bd92-a6718461fd53",
+      "name": "Ibiza, Spain",
+      "lat": 38.9089,
+      "lng": 1.4328,
+      "arrival_date": "2026-07-18",
+      "departure_date": "2026-07-21",
+      "notes": "Stay: Core Ibiza Town Hotel (Eivissa (Ibiza Town))",
+      "position": 2
+    },
+    {
+      "id": "stop_4",
+      "trip_id": "a31c12e8-fe4d-4625-bd92-a6718461fd53",
+      "name": "Seville, Spain",
+      "lat": 37.3886,
+      "lng": -5.9823,
+      "arrival_date": "2026-07-21",
+      "departure_date": "2026-07-24",
+      "notes": "Stay: Hotel Las Casas de la Judería (Santa Cruz)",
+      "position": 3
+    },
+    {
+      "id": "stop_5",
+      "trip_id": "a31c12e8-fe4d-4625-bd92-a6718461fd53",
+      "name": "Lagos, Portugal",
+      "lat": 37.1028,
+      "lng": -8.6741,
+      "arrival_date": "2026-07-24",
+      "departure_date": "2026-07-27",
+      "notes": "Stay: Lagos Avenida Hotel (Marina / old town edge)",
+      "position": 4
+    },
+    {
+      "id": "stop_6",
+      "trip_id": "a31c12e8-fe4d-4625-bd92-a6718461fd53",
+      "name": "Porto, Portugal",
+      "lat": 41.1496,
+      "lng": -8.6109,
+      "arrival_date": "2026-07-27",
+      "departure_date": "2026-07-30",
+      "notes": "Stay: Descobertas Boutique Hotel (Ribeira riverfront)",
+      "position": 5
+    },
+    {
+      "id": "stop_7",
+      "trip_id": "a31c12e8-fe4d-4625-bd92-a6718461fd53",
+      "name": "Lisbon, Portugal",
+      "lat": 38.7223,
+      "lng": -9.1393,
+      "arrival_date": "2026-07-30",
+      "departure_date": "2026-08-01",
+      "notes": "Stay: Bairro Alto Hotel (Bairro Alto / Chiado)",
+      "position": 6
+    }
+  ],
+  "photos": [
+    {
+      "id": "4854c716-e42a-4b73-a2b4-4b34d899fe7c",
+      "stop_id": "stop_1",
+      "storage_path": "1a5e6890-175b-475b-90cf-705e72456b58.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:05:30.062Z"
+    },
+    {
+      "id": "e9f19007-f591-4323-b5c3-ce5549fe036d",
+      "stop_id": "stop_1",
+      "storage_path": "595086a0-b93b-4919-b9c9-7830f63f9741.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:05:44.309Z"
+    },
+    {
+      "id": "0e87cdb9-531b-48bf-bfbb-04a26dda398e",
+      "stop_id": "stop_1",
+      "storage_path": "6fa69bcf-05e8-4bca-ad39-43c8d9f66083.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:05:52.010Z"
+    },
+    {
+      "id": "fb3087e7-81a3-445a-a7d6-b4d2f0e8876b",
+      "stop_id": "stop_2",
+      "storage_path": "1ec1f03f-f36b-40a8-961a-1f2a7ab55ea5.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:07:43.391Z"
+    },
+    {
+      "id": "4ac04dfe-0916-40be-a60e-d14fa813028f",
+      "stop_id": "stop_2",
+      "storage_path": "04d2abf8-9d11-45a5-9ca9-407a3c434e22.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:07:47.396Z"
+    },
+    {
+      "id": "d2a56e40-4e63-460b-afa9-f4858ad6dd0c",
+      "stop_id": "stop_2",
+      "storage_path": "58f86e79-2bf9-448a-a831-4aa011a418d7.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:07:51.396Z"
+    },
+    {
+      "id": "0770ac19-e34d-41b4-b97f-7896ed7ace4e",
+      "stop_id": "stop_3",
+      "storage_path": "cb216215-eb5b-4bfc-9153-45461cff3a42.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:29:11.336Z"
+    },
+    {
+      "id": "6287c7da-9e45-478d-9de0-b858a68d82b4",
+      "stop_id": "stop_3",
+      "storage_path": "8c3dd52d-a927-4e71-bfdb-fb8ca6a979a6.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:29:17.659Z"
+    },
+    {
+      "id": "c56b3edd-0965-4631-8a65-5888ce44268a",
+      "stop_id": "stop_3",
+      "storage_path": "ed3d8816-8ca3-406a-83ba-687f1d0bf292.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:29:22.482Z"
+    },
+    {
+      "id": "66729ee8-55ec-43c5-92bc-fd3cc3b1d02f",
+      "stop_id": "stop_3",
+      "storage_path": "f5363515-0467-4d49-abb0-244afa8ecccc.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:29:30.370Z"
+    },
+    {
+      "id": "f3b9709e-6b85-4b68-a07c-5a9f8507300c",
+      "stop_id": "stop_3",
+      "storage_path": "dfaff4c1-8fff-4390-83c7-d52955651b5a.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:29:35.598Z"
+    },
+    {
+      "id": "15425381-c43d-4228-8e83-38a05cb54897",
+      "stop_id": "stop_3",
+      "storage_path": "8b003d93-48f7-43c5-9e14-463868132fa1.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:29:44.952Z"
+    },
+    {
+      "id": "0eeddc72-3ed5-4a5b-b5d4-7e6006acd449",
+      "stop_id": "stop_4",
+      "storage_path": "1128c790-ea2a-4020-821d-aa217531ca81.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:30:05.503Z"
+    },
+    {
+      "id": "f309de95-b3ee-44ee-a457-d429ad148752",
+      "stop_id": "stop_4",
+      "storage_path": "4a690a8a-9409-45ca-9ad6-1ab68e0ab7f5.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:30:09.927Z"
+    },
+    {
+      "id": "3bffe661-7449-4014-929d-eff18b9f869f",
+      "stop_id": "stop_4",
+      "storage_path": "fc4ac8d0-adaa-48ac-b334-22b8f76c8490.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:30:14.329Z"
+    },
+    {
+      "id": "fdb3c1dc-953b-4aca-b051-a341b24d5ee2",
+      "stop_id": "stop_4",
+      "storage_path": "d8d5afe8-8e58-48d8-9408-eb6957897f04.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:30:22.773Z"
+    },
+    {
+      "id": "21151bbe-631c-4fda-9d35-d443b3bcf9d8",
+      "stop_id": "stop_4",
+      "storage_path": "56b22c99-9a7a-43a0-8c3e-dcc9daba273e.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:30:35.584Z"
+    },
+    {
+      "id": "9cb72f80-101e-4a62-b83e-5044303c1ef2",
+      "stop_id": "stop_4",
+      "storage_path": "cb614559-f91f-4cc4-804c-278184f3fb2d.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:30:39.716Z"
+    },
+    {
+      "id": "534be382-9a33-434c-ae40-31df8f9b076d",
+      "stop_id": "stop_5",
+      "storage_path": "e57707bd-31cb-4c84-b93c-75e35448d298.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:39:33.539Z"
+    },
+    {
+      "id": "b372b54b-e0de-4059-b501-ccf654ffc301",
+      "stop_id": "stop_5",
+      "storage_path": "cd6f678b-4c46-4124-b05b-7ffb6b4a0d57.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:39:40.056Z"
+    },
+    {
+      "id": "c756ae5a-684d-42ba-afe5-49dd2d60e304",
+      "stop_id": "stop_5",
+      "storage_path": "ce3d6d38-61b5-4542-92d1-670cdfec8642.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:40:56.779Z"
+    },
+    {
+      "id": "22172af6-66ee-4245-808b-c3afbaf843a3",
+      "stop_id": "stop_5",
+      "storage_path": "a9560739-f24d-455c-b80d-576106b94d48.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:41:01.391Z"
+    },
+    {
+      "id": "73d8b087-3d36-4652-8a66-a62eaa4830a9",
+      "stop_id": "stop_5",
+      "storage_path": "e06f5f32-eef8-4289-85f1-55b1c511d833.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:41:07.285Z"
+    },
+    {
+      "id": "3bdac1e8-485b-4960-b308-5aa589b3ad22",
+      "stop_id": "stop_5",
+      "storage_path": "32ec3414-e6a2-4e8b-a5d5-ce811d283bed.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:41:13.872Z"
+    },
+    {
+      "id": "bc59366b-de69-499b-92b6-bb9af109d124",
+      "stop_id": "stop_5",
+      "storage_path": "1b8df0a5-b09e-41c7-81c7-5cbd31d3c9d3.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:41:18.477Z"
+    },
+    {
+      "id": "64a582ce-7783-42d8-b082-ab37b547221a",
+      "stop_id": "stop_6",
+      "storage_path": "7db1edb8-9f51-4fcc-8d26-899b80ca38c4.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:42:42.538Z"
+    },
+    {
+      "id": "c0555019-3bfa-4258-abda-63b54e704090",
+      "stop_id": "stop_6",
+      "storage_path": "cf06eb5d-9adc-4127-a0f8-5dcab2fb0f2d.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:42:47.859Z"
+    },
+    {
+      "id": "7a536c3d-d266-4492-bbdb-dd332387b027",
+      "stop_id": "stop_6",
+      "storage_path": "e62eab55-5dfb-4e56-a6df-dfcf146f8f97.jpg",
+      "caption": "",
+      "uploaded_at": "2026-06-22T06:42:52.644Z"
+    }
+  ],
+  "reactions": [],
+  "comments": [],
+  "live_locations": []
+}

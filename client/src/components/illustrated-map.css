@@ -1,0 +1,182 @@
+/* ── Illustrated Map Global Styles ──────────────────────────────────────────
+   Targets Leaflet divIcon HTML — must be global (not CSS Modules).
+   All classes prefixed ilm- to avoid collisions.
+────────────────────────────────────────────────────────────────────────────── */
+
+/* Watercolor tile enhancement */
+.ilm-container .leaflet-tile-pane {
+  filter: saturate(1.1) contrast(0.88) brightness(1.06);
+}
+
+/* Paper background between tiles */
+.ilm-container .leaflet-container {
+  background: #f0e8d8;
+}
+
+/* ── Marker wrapper ───────────────────────────────────────────────────────── */
+.ilm-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 96px;
+  transition: filter 0.15s ease;
+  will-change: transform;
+}
+
+.ilm-wrap:hover {
+  filter: drop-shadow(0 5px 14px rgba(0,0,0,0.3));
+}
+
+.ilm-wrap:hover .ilm-card {
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* ── Marker card ─────────────────────────────────────────────────────────── */
+.ilm-card {
+  background: #fffef9;
+  border-radius: 12px;
+  width: 72px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.06);
+  border: 1.5px solid rgba(0,0,0,0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.ilm-svg {
+  width: 48px;
+  height: 39px;
+  display: block;
+}
+
+/* ── Number badge ────────────────────────────────────────────────────────── */
+.ilm-num {
+  position: absolute;
+  bottom: -11px;
+  right: -11px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: white;
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2.5px solid #fffef9;
+  font-family: Georgia, serif;
+  letter-spacing: -0.02em;
+  z-index: 2;
+}
+
+/* ── Status badges ───────────────────────────────────────────────────────── */
+.ilm-pulse {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #1A3C5E;
+  border: 2.5px solid white;
+  z-index: 3;
+  animation: ilm-pulse-anim 2s ease-in-out infinite;
+}
+
+.ilm-check {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #2E7D50;
+  border: 2.5px solid white;
+  color: white;
+  font-size: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  font-weight: 700;
+}
+
+@keyframes ilm-pulse-anim {
+  0%, 100% { box-shadow: 0 0 0 0   rgba(26,60,94,0.6); }
+  60%       { box-shadow: 0 0 0 10px rgba(26,60,94,0); }
+}
+
+/* ── City label ──────────────────────────────────────────────────────────── */
+.ilm-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 11px;
+  gap: 2px;
+}
+
+.ilm-city {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #1A3C5E;
+  white-space: nowrap;
+  background: rgba(255,254,249,0.94);
+  padding: 2px 7px;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.13);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  max-width: 94px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ilm-date {
+  font-size: 9.5px;
+  color: #5A7080;
+  white-space: nowrap;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: rgba(255,254,249,0.88);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+/* ── Stem (pin tip) ──────────────────────────────────────────────────────── */
+.ilm-stem {
+  width: 3px;
+  height: 10px;
+  border-radius: 0 0 3px 3px;
+  margin-top: 3px;
+}
+
+/* ── Status modifiers ────────────────────────────────────────────────────── */
+.ilm-upcoming .ilm-card  { opacity: 0.62; }
+.ilm-upcoming .ilm-city  { opacity: 0.72; }
+.ilm-upcoming .ilm-date  { opacity: 0.55; }
+
+.ilm-visited .ilm-card {
+  border-color: rgba(46,125,80,0.2);
+}
+
+.ilm-current .ilm-card {
+  border-color: rgba(26,60,94,0.3);
+  box-shadow: 0 3px 16px rgba(26,60,94,0.22), 0 0 0 1px rgba(0,0,0,0.06);
+}
+
+/* ── Selected ────────────────────────────────────────────────────────────── */
+.ilm-sel .ilm-card {
+  border-color: #2E7D50 !important;
+  border-width: 2.5px !important;
+  box-shadow: 0 0 0 4px rgba(46,125,80,0.2), 0 4px 14px rgba(0,0,0,0.22) !important;
+}
+
+/* Leaflet route SVG */
+.ilm-container .leaflet-overlay-pane svg path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

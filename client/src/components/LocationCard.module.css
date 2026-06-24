@@ -1,0 +1,107 @@
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 13px 15px;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.10);
+  min-width: 210px;
+  width: 210px;
+}
+
+.label {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-bottom: 3px;
+}
+
+.location {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--deep-blue);
+  font-family: 'Playfair Display', Georgia, serif;
+  margin-bottom: 3px;
+  line-height: 1.2;
+}
+
+.meta {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.mood {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--warm-sand);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--deep-blue);
+  font-weight: 500;
+}
+
+/* ── Progress card ── */
+.progressCard {
+  background: white;
+  border-radius: 12px;
+  padding: 12px 15px;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.10);
+  min-width: 210px;
+  width: 210px;
+}
+
+.progressLabel {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-bottom: 8px;
+}
+
+.progressBar {
+  height: 6px;
+  background: var(--warm-sand);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #2E7D50, #4A9E6A);
+  border-radius: 3px;
+  transition: width 0.6s ease;
+  min-width: 6px;
+}
+
+.progressText {
+  font-size: 12px;
+  color: var(--deep-blue);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.nextStop {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--slate);
+}
+
+.nextIcon {
+  color: var(--terracotta);
+  font-weight: 700;
+}
+
+.countdown {
+  font-size: 11px;
+  color: var(--terracotta);
+  font-weight: 600;
+  margin-left: 5px;
+  white-space: nowrap;
+}

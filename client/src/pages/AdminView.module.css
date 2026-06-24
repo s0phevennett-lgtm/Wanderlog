@@ -1,0 +1,236 @@
+/* Same grid shell as TripView */
+.container {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  height: 100vh;
+  overflow: hidden;
+  background: #f0e8d8;
+}
+
+.main {
+  display: grid;
+  grid-template-rows: 52px 1fr 132px;
+  overflow: hidden;
+  min-width: 0;
+}
+
+/* ── Admin top bar — dark navy so it's unmistakably different from viewer ── */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background: var(--deep-blue);
+  z-index: 500;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.tripTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.adminBadge {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.tripName {
+  font-size: 16px;
+  font-family: 'Playfair Display', Georgia, serif;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
+}
+
+.checkedIn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.checkedInDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: pulse-g 2s ease-in-out infinite;
+}
+
+@keyframes pulse-g {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0.5); }
+  60%       { box-shadow: 0 0 0 5px rgba(74,222,128,0); }
+}
+
+.topActions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+/* Primary admin actions */
+.uploadBtn {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 7px;
+  padding: 6px 12px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.12s;
+}
+.uploadBtn:hover { background: rgba(255,255,255,0.25); }
+
+.checkinBtn {
+  background: var(--terracotta);
+  border: none;
+  border-radius: 7px;
+  padding: 6px 12px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.12s;
+}
+.checkinBtn:hover { opacity: 0.88; }
+
+/* Secondary actions */
+.actionBtn {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 7px;
+  padding: 6px 11px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.12s;
+}
+.actionBtn:hover { background: rgba(255,255,255,0.18); }
+
+/* Switch to viewer */
+.viewerBtn {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 7px;
+  padding: 6px 11px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.55);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.12s, border-color 0.12s;
+}
+.viewerBtn:hover { color: white; border-color: rgba(255,255,255,0.4); }
+
+/* ── Map area ── */
+.mapArea {
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+  isolation: isolate;
+}
+
+/* ── Decorative foliage ── */
+.foliage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 800;
+}
+.leaf1 { position: absolute; bottom: 8px; left: 8px; opacity: 0.9; transform-origin: bottom left; animation: sway 6s ease-in-out infinite; }
+.leaf2 { position: absolute; top: 8px; right: 8px; opacity: 0.8; transform-origin: top right; animation: sway 8s ease-in-out infinite reverse; }
+.leaf3 { position: absolute; bottom: 8px; right: 8px; opacity: 0.75; transform-origin: bottom right; animation: sway 7s ease-in-out infinite 1s; }
+.leaf4 { position: absolute; top: 8px; left: 8px; opacity: 0.65; transform-origin: top left; animation: sway 9s ease-in-out infinite 2s reverse; }
+@keyframes sway { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+
+.leftCards {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  z-index: 490;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: all;
+  min-width: 0;
+}
+
+.rightPanel {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 490;
+  pointer-events: all;
+}
+
+/* ── Bottom timeline ── */
+.bottomStrip {
+  background: white;
+  border-top: 1px solid rgba(0,0,0,0.07);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* ── States ── */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 12px;
+  font-size: 18px;
+  color: var(--slate);
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--warm-sand);
+  border-top-color: var(--terracotta);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.timelineFlash {
+  animation: timeline-flash 1s ease;
+}
+
+@keyframes timeline-flash {
+  0%, 100% { box-shadow: none; }
+  30%       { box-shadow: inset 0 0 0 2px var(--terracotta); }
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #c0392b;
+  font-size: 18px;
+}

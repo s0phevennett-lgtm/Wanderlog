@@ -1,0 +1,202 @@
+.strip {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-top: 1px solid rgba(0,0,0,0.07);
+  overflow: hidden;
+}
+
+/* ── Scroll arrows ── */
+.arrow {
+  width: 28px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: none;
+  cursor: pointer;
+  color: #94a3b8;
+  font-size: 22px;
+  flex-shrink: 0;
+  transition: color 0.15s;
+  padding: 0;
+}
+.arrow:hover { color: #1A3C5E; }
+
+/* ── Scrollable row ── */
+.scroll {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  padding: 8px 6px;
+  scrollbar-width: none;
+  gap: 0;
+  min-width: 0;
+}
+.scroll::-webkit-scrollbar { display: none; }
+
+/* ── Stop card ── */
+.stopCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 6px 12px 5px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background: none;
+  transition: background 0.14s, border-color 0.14s, transform 0.14s;
+  gap: 3px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  min-width: 90px;
+  position: relative;
+}
+
+.stopCard:hover {
+  background: #f5f0e8;
+  transform: translateY(-1px);
+}
+
+/* Status: selected */
+.active {
+  background: rgba(46,125,80,0.07) !important;
+  border-color: #2E7D50 !important;
+}
+
+/* Status: upcoming — slightly dimmed */
+.upcoming { opacity: 0.65; }
+
+/* ── Status dot (top-right corner of card) ── */
+.statusDot {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot_visited  { background: #2E7D50; }
+.dot_current  { background: #1A3C5E; animation: dot-pulse 2s ease-in-out infinite; }
+.dot_upcoming { background: transparent; border: 2px solid #8AA8B0; }
+
+@keyframes dot-pulse {
+  0%, 100% { box-shadow: 0 0 0 0   rgba(26,60,94,0.5); }
+  60%       { box-shadow: 0 0 0 6px rgba(26,60,94,0); }
+}
+
+/* ── Building illustration ── */
+.iconWrap {
+  position: relative;
+  width: 52px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buildingSvg {
+  width: 52px;
+  height: 42px;
+  display: block;
+}
+
+.numBadge {
+  position: absolute;
+  bottom: -4px;
+  right: -6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  color: white;
+  font-size: 9px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  font-family: Georgia, serif;
+}
+
+/* ── Labels ── */
+.city {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #1A3C5E;
+  white-space: nowrap;
+  max-width: 88px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+}
+
+.dates {
+  font-size: 9.5px;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+/* ── Connector arrow between stops ── */
+.connector {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-bottom: 22px;
+}
+
+.connSvg {
+  width: 40px;
+  height: 12px;
+  display: block;
+}
+
+/* ── Right legend ── */
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0 14px;
+  flex-shrink: 0;
+  border-left: 1px solid rgba(0,0,0,0.07);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.ldotGreen {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2E7D50;
+  flex-shrink: 0;
+}
+
+.ldotBlue {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1A3C5E;
+  flex-shrink: 0;
+}
+
+.ldotGrey {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid #8AA8B0;
+  flex-shrink: 0;
+}

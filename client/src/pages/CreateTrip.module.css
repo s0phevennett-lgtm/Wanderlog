@@ -1,0 +1,294 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--off-white);
+  padding: 24px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 560px;
+  box-shadow: var(--shadow);
+}
+
+.logo {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 36px;
+  color: var(--deep-blue);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: var(--slate);
+  font-size: 16px;
+  margin-bottom: 28px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  border: 1.5px solid #e0dbd4;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.tab, .tabActive {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.tab {
+  background: white;
+  color: var(--slate);
+}
+
+.tabActive {
+  background: var(--deep-blue);
+  color: white;
+}
+
+/* PDF section */
+.pdfSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pdfHint {
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.dropzone {
+  border: 2px dashed #d0c9c0;
+  border-radius: var(--radius);
+  padding: 32px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropzone:hover {
+  border-color: var(--terracotta);
+  background: #fdf8f5;
+}
+
+.dropzoneIcon {
+  font-size: 32px;
+}
+
+.dropzoneLabel {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--deep-blue);
+}
+
+.dropzoneSub {
+  font-size: 12px;
+  color: var(--slate);
+}
+
+.dropzoneLoading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--slate);
+  font-size: 14px;
+}
+
+.dropzoneDone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #2d7a4f;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.checkmark {
+  font-size: 20px;
+}
+
+/* Preview */
+.preview {
+  background: var(--warm-sand);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.previewTitle {
+  font-size: 18px;
+  color: var(--deep-blue);
+  margin: 0 0 4px;
+}
+
+.previewDates {
+  font-size: 13px;
+  color: var(--slate);
+  margin: 0 0 14px;
+}
+
+.stopList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stopItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--deep-blue);
+}
+
+.stopNum {
+  background: var(--terracotta);
+  color: white;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.stopDates {
+  font-size: 12px;
+  color: var(--slate);
+  font-weight: 400;
+}
+
+/* JSON form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.textareaHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.textareaHeader label {
+  font-weight: 500;
+  color: var(--deep-blue);
+  font-size: 14px;
+}
+
+.form textarea {
+  width: 100%;
+  border: 1.5px solid #ddd;
+  border-radius: var(--radius);
+  padding: 12px;
+  font-size: 13px;
+  font-family: ui-monospace, Consolas, monospace;
+  resize: vertical;
+  color: var(--deep-blue);
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.form textarea:focus {
+  outline: none;
+  border-color: var(--terracotta);
+}
+
+.error {
+  color: #c0392b;
+  font-size: 14px;
+  margin: 0;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid var(--warm-sand);
+  border-top-color: var(--terracotta);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Success screen */
+.successIcon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.linkBox {
+  background: var(--warm-sand);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.linkBox label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.linkRow {
+  display: flex;
+  gap: 8px;
+}
+
+.linkRow input {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 13px;
+  color: var(--deep-blue);
+  background: white;
+  min-width: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.actions button {
+  flex: 1;
+}

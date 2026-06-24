@@ -1,0 +1,126 @@
+.wrap { display: flex; flex-direction: column; gap: 16px; }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--warm-sand);
+  border-radius: var(--radius);
+  padding: 14px;
+}
+
+.input, .textarea {
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--deep-blue);
+  background: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.textarea { resize: vertical; }
+.input:focus, .textarea:focus { outline: none; border-color: var(--terracotta); }
+
+.postBtn {
+  background: var(--terracotta);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.cancelBtn {
+  background: transparent;
+  color: var(--slate);
+  border: none;
+  padding: 8px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.empty { text-align: center; color: var(--slate); font-size: 14px; padding: 20px 0; }
+
+.list { display: flex; flex-direction: column; gap: 12px; }
+
+.comment {
+  background: white;
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.commentHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.author { font-size: 13px; color: var(--terracotta); }
+.time { font-size: 11px; color: #aaa; }
+.body { font-size: 14px; color: var(--deep-blue); margin: 0 0 8px; line-height: 1.5; }
+
+.commentActions {
+  display: flex;
+  gap: 10px;
+}
+
+.likeBtn {
+  background: none;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  color: var(--slate);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 0;
+}
+
+.replyBtn {
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: var(--slate);
+  cursor: pointer;
+  padding: 0;
+  font-weight: 500;
+}
+
+.replyBtn:hover { color: var(--terracotta); }
+
+.replies {
+  margin-top: 10px;
+  padding-left: 14px;
+  border-left: 2px solid #f0ece6;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reply {
+  font-size: 13px;
+  color: var(--deep-blue);
+}
+
+.reply .body { font-size: 13px; margin-top: 2px; }
+
+.replyForm {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.replyBtns {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}
