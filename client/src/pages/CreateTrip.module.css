@@ -100,9 +100,53 @@
 .subtitle {
   color: #8a7f74;
   font-size: 14px;
-  margin: 0 0 28px;
+  margin: 0 0 20px;
   padding-left: 2px;
   letter-spacing: 0.02em;
+}
+
+/* ── Example trip button ── */
+.exampleBtn {
+  width: 100%;
+  padding: 13px 20px;
+  border-radius: 12px;
+  border: 2px solid var(--forest);
+  background: var(--forest);
+  color: white;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.12s;
+  margin-bottom: 20px;
+}
+.exampleBtn:hover {
+  background: #246040;
+  transform: translateY(-1px);
+}
+.exampleBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Divider ── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #b0a898;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e0d8cc;
 }
 
 /* ── Mode tabs ── */

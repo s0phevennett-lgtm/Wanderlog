@@ -15,6 +15,34 @@ export default function CreateTrip() {
   const navigate = useNavigate()
   const blobRefs = [useRef(), useRef(), useRef(), useRef(), useRef(), useRef()]
 
+  const EXAMPLE_TRIP = {
+    trip_name: 'Best of Europe — Summer 2026',
+    start_date: '2026-07-01',
+    end_date: '2026-07-22',
+    stops: [
+      { name: 'Paris, France',            lat: 48.8566,  lng:  2.3522,  arrival_date: '2026-07-01', departure_date: '2026-07-05', notes: 'The city of light — Eiffel Tower, the Louvre, and endless café au laits.' },
+      { name: 'Barcelona, Spain',         lat: 41.3851,  lng:  2.1734,  arrival_date: '2026-07-05', departure_date: '2026-07-09', notes: 'Gaudí architecture, tapas on Las Ramblas, and beach days.' },
+      { name: 'Rome, Italy',              lat: 41.9028,  lng: 12.4964,  arrival_date: '2026-07-09', departure_date: '2026-07-14', notes: 'The Colosseum, Vatican City, and the best carbonara of my life.' },
+      { name: 'Santorini, Greece',        lat: 36.3932,  lng: 25.4615,  arrival_date: '2026-07-14', departure_date: '2026-07-18', notes: 'Clifftop villages, volcanic beaches, and sunsets from Oia.' },
+      { name: 'Amsterdam, Netherlands',   lat: 52.3676,  lng:  4.9041,  arrival_date: '2026-07-18', departure_date: '2026-07-22', notes: 'Canal cruises, the Rijksmuseum, and cycling everywhere.' },
+    ]
+  }
+
+  async function handleLoadExample() {
+    setError('')
+    setLoading(true)
+    setLoadingMsg('Loading example trip…')
+    try {
+      const data = await createTrip(EXAMPLE_TRIP)
+      setResult(data)
+    } catch (err) {
+      setError('Could not load example trip.')
+    } finally {
+      setLoading(false)
+      setLoadingMsg('')
+    }
+  }
+
   useEffect(() => {
     const targets = Array.from({ length: 6 }, () => ({ x: 0, y: 0 }))
     const current = Array.from({ length: 6 }, () => ({ x: 0, y: 0 }))
@@ -139,10 +167,12 @@ export default function CreateTrip() {
   return (
     <div className={styles.page}>
       <div className={styles.blobs} aria-hidden="true">
-        <div className={`${styles.blob} ${styles.blob1}`}/>
-        <div className={`${styles.blob} ${styles.blob2}`}/>
-        <div className={`${styles.blob} ${styles.blob3}`}/>
-        <div className={`${styles.blob} ${styles.blob4}`}/>
+        <div ref={blobRefs[0]} className={`${styles.blob} ${styles.blob1}`}/>
+        <div ref={blobRefs[1]} className={`${styles.blob} ${styles.blob2}`}/>
+        <div ref={blobRefs[2]} className={`${styles.blob} ${styles.blob3}`}/>
+        <div ref={blobRefs[3]} className={`${styles.blob} ${styles.blob4}`}/>
+        <div ref={blobRefs[4]} className={`${styles.blob} ${styles.blob5}`}/>
+        <div ref={blobRefs[5]} className={`${styles.blob} ${styles.blob6}`}/>
       </div>
       <div className={styles.card}>
         <div className={styles.logoWrap}>
@@ -154,6 +184,16 @@ export default function CreateTrip() {
           <span className={styles.logoText}>Wanderlog</span>
         </div>
         <p className={styles.subtitle}>Share your journey in real time</p>
+
+        <button
+          className={styles.exampleBtn}
+          onClick={handleLoadExample}
+          disabled={loading}
+        >
+          ✈️ &nbsp;View example trip
+        </button>
+
+        <div className={styles.divider}><span>or create your own</span></div>
 
         <div className={styles.tabs}>
           <button
