@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { BUILDINGS, ICON_ORDER, getStopStatus, fmtDate } from './buildingIcons'
+import { getIconForStop, getStopStatus, fmtDate } from './buildingIcons'
 import styles from './BottomTimeline.module.css'
 
 export default function BottomTimeline({ stops, liveLocation, selectedStop, onSelectStop }) {
@@ -17,8 +17,7 @@ export default function BottomTimeline({ stops, liveLocation, selectedStop, onSe
         {stops.map((stop, i) => {
           const status     = getStopStatus(stop, i, liveLocation, stops)
           const isSelected = selectedStop?.id === stop.id
-          const type       = ICON_ORDER[i % ICON_ORDER.length]
-          const svg        = BUILDINGS[type]
+          const { svg }    = getIconForStop(stop.name, i)
           const city       = stop.name.split(',')[0].trim()
           const arrival    = fmtDate(stop.arrival_date)
           const departure  = fmtDate(stop.departure_date)
